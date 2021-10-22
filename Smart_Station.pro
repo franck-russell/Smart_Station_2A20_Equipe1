@@ -9,16 +9,16 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    avions.cpp \
+    avion.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
-    avions.h \
+    avion.h \
     mainwindow.h
 
 FORMS += \
-    avions.ui \
+    avion.ui \
     mainwindow.ui
 
 # Default rules for deployment.
