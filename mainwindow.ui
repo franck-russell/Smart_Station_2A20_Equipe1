@@ -152,6 +152,7 @@
     <property name="title">
      <string>Autentification</string>
     </property>
+    <addaction name="separator"/>
    </widget>
    <addaction name="menuAutentification"/>
   </widget>

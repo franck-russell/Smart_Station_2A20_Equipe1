@@ -25,7 +25,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_seconnecter_clicked()
 {
-//Avion a;
-//a.exec();
+avion a;
+a.exec();
 }
 
