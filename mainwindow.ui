@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>652</width>
-    <height>424</height>
+    <width>678</width>
+    <height>449</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,8 +17,8 @@
    <widget class="QTabWidget" name="Autentification">
     <property name="geometry">
      <rect>
-      <x>130</x>
-      <y>50</y>
+      <x>320</x>
+      <y>-30</y>
       <width>321</width>
       <height>281</height>
      </rect>
@@ -114,8 +114,8 @@
      <rect>
       <x>-4</x>
       <y>2</y>
-      <width>661</width>
-      <height>411</height>
+      <width>671</width>
+      <height>421</height>
      </rect>
     </property>
     <property name="text">
@@ -144,7 +144,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>652</width>
+     <width>678</width>
      <height>20</height>
     </rect>
    </property>

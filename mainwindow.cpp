@@ -9,7 +9,9 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     QPixmap pix("D:/Esprit/2eme année/semestre 1/projet cpp/logo/image1");
-    ui->label_image1->setPixmap(pix);
+    int w = ui->label_image1->width();
+    int h = ui->label_image1->height();
+    ui->label_image1->setPixmap(pix.scaled(w,h,Qt::KeepAspectRatio));
     //QPixmap pix("D:/Esprit/2eme année/semestre 1/projet cpp/logo/logo4");
     //ui->label_logo4->setPixmap(pix);
 
