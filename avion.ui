@@ -101,26 +101,6 @@
       </rect>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_etat">
-     <property name="geometry">
-      <rect>
-       <x>110</x>
-       <y>120</y>
-       <width>113</width>
-       <height>21</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_type">
-     <property name="geometry">
-      <rect>
-       <x>110</x>
-       <y>170</y>
-       <width>113</width>
-       <height>21</height>
-      </rect>
-     </property>
-    </widget>
     <widget class="QPushButton" name="pushButton_Ajouter">
      <property name="geometry">
       <rect>
@@ -185,6 +165,51 @@
       <pixmap>D:/Esprit/2eme année/semestre 1/projet cpp/logo/image1.jpg</pixmap>
      </property>
     </widget>
+    <widget class="QComboBox" name="comboBox">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>120</y>
+       <width>101</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>Fonctionnel</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Endommagé</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>En réparration</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QComboBox" name="comboBox_2">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>170</y>
+       <width>72</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>jet privé</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>avion de tourisme</string>
+      </property>
+     </item>
+    </widget>
     <zorder>label_16</zorder>
     <zorder>label</zorder>
     <zorder>label_2</zorder>
@@ -192,11 +217,11 @@
     <zorder>label_4</zorder>
     <zorder>lineEdit_id</zorder>
     <zorder>lineEdit_capacit</zorder>
-    <zorder>lineEdit_etat</zorder>
-    <zorder>lineEdit_type</zorder>
     <zorder>pushButton_Ajouter</zorder>
     <zorder>label_14</zorder>
     <zorder>label_15</zorder>
+    <zorder>comboBox</zorder>
+    <zorder>comboBox_2</zorder>
    </widget>
    <widget class="QWidget" name="tab_2">
     <attribute name="title">

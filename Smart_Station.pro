@@ -10,11 +10,15 @@ CONFIG += c++11
 
 SOURCES += \
     avion.cpp \
+    avions.cpp \
+    connection.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
     avion.h \
+    avions.h \
+    connection.h \
     mainwindow.h
 
 FORMS += \
