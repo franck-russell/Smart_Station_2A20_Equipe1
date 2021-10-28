@@ -1,7 +1,8 @@
 #ifndef AVIONS_H
 #define AVIONS_H
-
+#include <QSqlQueryModel>
 #include <QString>
+
 
 class Avions
 {
@@ -16,6 +17,8 @@ public:
     void setcapacite(int);
     void settype(QString);
     void setetat(QString);
+    bool ajouter();
+    QSqlQueryModel* afficher();
 private:
     int id, capacite;
     QString type, etat;

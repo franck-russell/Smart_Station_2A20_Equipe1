@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>2</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
@@ -81,7 +81,7 @@
       <string>Type</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_id">
+    <widget class="QLineEdit" name="le_id">
      <property name="geometry">
       <rect>
        <x>110</x>
@@ -91,7 +91,7 @@
       </rect>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_capacit">
+    <widget class="QLineEdit" name="le_capacite">
      <property name="geometry">
       <rect>
        <x>110</x>
@@ -101,7 +101,7 @@
       </rect>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_Ajouter">
+    <widget class="QPushButton" name="pb_Ajouter">
      <property name="geometry">
       <rect>
        <x>300</x>
@@ -165,7 +165,7 @@
       <pixmap>D:/Esprit/2eme année/semestre 1/projet cpp/logo/image1.jpg</pixmap>
      </property>
     </widget>
-    <widget class="QComboBox" name="comboBox">
+    <widget class="QComboBox" name="cb_etat">
      <property name="geometry">
       <rect>
        <x>110</x>
@@ -190,7 +190,7 @@
       </property>
      </item>
     </widget>
-    <widget class="QComboBox" name="comboBox_2">
+    <widget class="QComboBox" name="cb_type">
      <property name="geometry">
       <rect>
        <x>110</x>
@@ -215,13 +215,13 @@
     <zorder>label_2</zorder>
     <zorder>label_3</zorder>
     <zorder>label_4</zorder>
-    <zorder>lineEdit_id</zorder>
-    <zorder>lineEdit_capacit</zorder>
-    <zorder>pushButton_Ajouter</zorder>
+    <zorder>le_id</zorder>
+    <zorder>le_capacite</zorder>
+    <zorder>pb_Ajouter</zorder>
     <zorder>label_14</zorder>
     <zorder>label_15</zorder>
-    <zorder>comboBox</zorder>
-    <zorder>comboBox_2</zorder>
+    <zorder>cb_etat</zorder>
+    <zorder>cb_type</zorder>
    </widget>
    <widget class="QWidget" name="tab_2">
     <attribute name="title">
@@ -462,16 +462,6 @@
       <string>Document Excel</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_3">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>20</y>
-       <width>271</width>
-       <height>251</height>
-      </rect>
-     </property>
-    </widget>
     <widget class="QLabel" name="label_18">
      <property name="geometry">
       <rect>
@@ -491,17 +481,27 @@
     <widget class="QLabel" name="label_13">
      <property name="geometry">
       <rect>
-       <x>0</x>
+       <x>-10</x>
        <y>0</y>
        <width>581</width>
-       <height>301</height>
+       <height>351</height>
       </rect>
      </property>
      <property name="text">
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap>../pp/Nouveau dossier (2)/4cf97246ebb7d00475e70d9e14e005f5.jpg</pixmap>
+      <pixmap>D:/Esprit/2eme année/semestre 1/projet cpp/logo/image6.jpg</pixmap>
+     </property>
+    </widget>
+    <widget class="QTableView" name="tab_afficher">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>271</width>
+       <height>211</height>
+      </rect>
      </property>
     </widget>
     <zorder>label_13</zorder>
@@ -512,8 +512,8 @@
     <zorder>label_7</zorder>
     <zorder>lineEdit_2</zorder>
     <zorder>pushButton_docExel</zorder>
-    <zorder>lineEdit_3</zorder>
     <zorder>label_18</zorder>
+    <zorder>tab_afficher</zorder>
    </widget>
    <widget class="QWidget" name="Supprimer">
     <attribute name="title">
