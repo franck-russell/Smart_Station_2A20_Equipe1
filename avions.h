@@ -18,6 +18,7 @@ public:
     void settype(QString);
     void setetat(QString);
     bool ajouter();
+    bool supprimer(int);
     QSqlQueryModel* afficher();
 private:
     int id, capacite;

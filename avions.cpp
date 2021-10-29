@@ -34,6 +34,15 @@ bool Avions::ajouter()
     return test;
 }
 
+bool Avions::supprimer(int id)
+{
+    QSqlQuery query;
+    QString res= QString::number(id);
+    query.prepare("Delete from avions where id=:id");
+    query.bindValue(":id",res );
+    return query.exec();
+}
+
 QSqlQueryModel* Avions::afficher()
 {
 QSqlQueryModel* model=new QSqlQueryModel();

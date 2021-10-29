@@ -22,6 +22,8 @@ private slots:
 
     void on_pb_Ajouter_clicked();
 
+    void on_pb_supprimer_clicked();
+
 private:
     Ui::avion *ui;
     Avions A;

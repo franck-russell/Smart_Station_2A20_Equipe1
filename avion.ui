@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>3</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
@@ -322,8 +322,8 @@
     <widget class="QPushButton" name="pushButton_modifier_2">
      <property name="geometry">
       <rect>
-       <x>290</x>
-       <y>90</y>
+       <x>260</x>
+       <y>140</y>
        <width>91</width>
        <height>21</height>
       </rect>
@@ -532,11 +532,11 @@
       <string>Identifiant</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton">
+    <widget class="QPushButton" name="pb_supprimer">
      <property name="geometry">
       <rect>
        <x>150</x>
-       <y>100</y>
+       <y>80</y>
        <width>80</width>
        <height>21</height>
       </rect>
@@ -548,7 +548,7 @@
       <string>Supprimer</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit">
+    <widget class="QLineEdit" name="le_suppression">
      <property name="geometry">
       <rect>
        <x>130</x>
@@ -561,8 +561,8 @@
     <widget class="QLabel" name="label_12">
      <property name="geometry">
       <rect>
-       <x>260</x>
-       <y>10</y>
+       <x>290</x>
+       <y>20</y>
        <width>261</width>
        <height>251</height>
       </rect>
@@ -590,14 +590,14 @@
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap>../pp/Nouveau dossier/3231ca3a13365475.jpg</pixmap>
+      <pixmap>D:/Esprit/2eme année/semestre 1/projet cpp/logo/image3.jpg</pixmap>
      </property>
     </widget>
     <zorder>label_19</zorder>
     <zorder>label_12</zorder>
     <zorder>label_5</zorder>
-    <zorder>pushButton</zorder>
-    <zorder>lineEdit</zorder>
+    <zorder>pb_supprimer</zorder>
+    <zorder>le_suppression</zorder>
    </widget>
   </widget>
  </widget>
