@@ -9,20 +9,23 @@ class Avions
 public:
     Avions();
     Avions(int,int,QString,QString);
-    int getid();
+    int getidentifiant();
     int getcapacite();
     QString gettype();
     QString getetat();
-    void setid(int);
+    void setidentifiant(int);
     void setcapacite(int);
     void settype(QString);
     void setetat(QString);
     bool ajouter();
+    bool modifier();
     bool supprimer(int);
     QSqlQueryModel* afficher();
 private:
-    int id, capacite;
-    QString type, etat;
+    int identifiant;
+    int capacite;
+    QString type;
+    QString etat;
 };
 
 #endif // AVIONS_H

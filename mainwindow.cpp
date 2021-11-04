@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QPixmap>
-#include "avion.h"
+#include "dialogA.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -25,7 +25,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_seconnecter_clicked()
 {
-avion a;
-a.exec();
+dialogA d;
+d.exec();
 }
 

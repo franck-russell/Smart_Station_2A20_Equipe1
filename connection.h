@@ -1,6 +1,6 @@
 #ifndef CONNECTION_H
 #define CONNECTION_H
-#include <QSqldatabase>
+#include <QSqlDatabase>
 
 class Connection
 {
@@ -10,5 +10,6 @@ public:
     bool createconnection();
     void closeconnection();
 };
+
 
 #endif // CONNECTION_H
