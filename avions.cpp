@@ -39,17 +39,17 @@ bool Avions::ajouter()
 
 bool Avions::modifier()
 {
-    bool test=false;
+    //bool test=false;
 
     QSqlQuery query;
     QString res= QString::number(identifiant);
-    query.prepare("UPDATE AVION SET /* identifiant:identifiant, capacite:capacite, type:type, etat:etat)");
+    query.prepare("UPDATE AVION SET  identifiant=:identifiant, capacite=:capacite, type=:type, etat=:etat)");
     query.bindValue(":identifiant",res );
     query.bindValue(":capacite", capacite);
     query.bindValue(":type", type);
     query.bindValue(":etat", etat);
     return query.exec();
-    return test;
+
 }
 bool Avions::supprimer(int identifiant)
 {
@@ -72,6 +72,15 @@ model->setHeaderData(3,Qt::Horizontal,QObject::tr("etat"));
 return model;
 }
 
+
+QSqlQueryModel* Avions::afficher_ID()
+{
+QSqlQueryModel* model=new QSqlQueryModel();
+
+model->setQuery("select identifiant from AVION");
+model->setHeaderData(0,Qt::Horizontal,QObject::tr("identifiant"));
+return model;
+}
 
 
 

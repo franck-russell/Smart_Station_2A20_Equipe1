@@ -22,6 +22,12 @@ private slots:
 
     void on_pushButton_modifier_2_clicked();
 
+    void on_tab_afficher_activated(const QModelIndex &index);
+
+    void on_pb_modifier_clicked();
+
+    void on_pb_rechercher_clicked();
+
 private:
     Ui::dialogA *ui;
     Avions A;

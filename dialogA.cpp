@@ -11,8 +11,12 @@ dialogA::dialogA(QWidget *parent) :
     ui(new Ui::dialogA)
 {
     ui->setupUi(this);
-  //  ui->le_identifiant->setValidator(new QIntValidator(0, 99999999, this));
+    ui->le_identifiant->setValidator(new QIntValidator(0, 999999, this));
     ui->tab_afficher->setModel(A.afficher());
+    ui->cb_suppression->setModel(A.afficher_ID());
+    ui->cb_modifier->setModel(A.afficher_ID());
+    ui->cb_rechercher->setModel(A.afficher_ID());
+    ui->tb_supprimer->setModel(A.afficher_ID());
 
 }
 
@@ -30,18 +34,7 @@ void dialogA::on_pb_Ajouter_clicked()
  QString etat=ui->cb_etat->currentText();
  Avions A(identifiant,capacite,type,etat);
  bool test=A.ajouter();
- //QMessageBox msgBox;
 
- /*if(test)
- {
-     msgBox.setText("Ajout avec succes.");
- ui->tab_afficher->setModel(A.afficher());
- }
- else{
-     msgBox.setText("Echec d'ajout");
-     msgBox.exec();
-}}
-*/
  if(test)
  {QMessageBox::information(nullptr, QObject::tr("OK"),
              QObject::tr("Ajout avec succes\n"
@@ -59,22 +52,16 @@ void dialogA::on_pb_Ajouter_clicked()
 
 void dialogA::on_pb_supprimer_clicked()
 {
-    Avions A1; A1.setidentifiant(ui->le_suppression->text().toInt());
+    Avions A1; A1.setidentifiant(ui->cb_suppression->currentText().toInt());
     bool test=A1.supprimer(A1.getidentifiant());
-    //QMessageBox msgBox;
 
- /*   if(test)
-    {msgBox.setText("Supprimer avec succes.");
-    ui->tab_afficher->setModel(A.afficher());
-    }
-    else
-        msgBox.setText("Echec de suppression.");
-        msgBox.exec();*/
     if(test)
     {QMessageBox::information(nullptr, QObject::tr("OK"),
                 QObject::tr("Supprimé avec succes\n"
                            "click Cancel to exist."), QMessageBox::Cancel);
         ui->tab_afficher->setModel(A.afficher());
+        ui->cb_suppression->setModel(A.afficher_ID());
+
     }
         else {
         QMessageBox::critical(nullptr, QObject::tr(" Not OK"),
@@ -83,14 +70,43 @@ void dialogA::on_pb_supprimer_clicked()
 }
 }
 
-void dialogA::on_pushButton_modifier_2_clicked()
+void dialogA::on_pb_rechercher_clicked()
 {
-
+    Avions A1; A1.setidentifiant(ui->cb_rechercher->currentText().toInt());
+    ui->tab_afficher->setModel(A.afficher());
 }
+
 
 
 void dialogA::on_pb_Afficher_clicked()
 {
 
 }
+
+
+
+void dialogA::on_pushButton_modifier_2_clicked()
+{
+    int identifiant=ui->cb_modifier->currentText().toInt();
+    int capacite=ui->le_capacite->text().toInt();
+    QString type=ui->cb_type_2->currentText();
+    QString etat=ui->cb_etat_2->currentText();
+
+    Avions A(identifiant,capacite,type,etat);
+    bool test=A.modifier();
+
+    if(test)
+    {QMessageBox::information(nullptr, QObject::tr("OK"),
+                QObject::tr("Modification avec succes\n"
+                           "click Cancel to exist."), QMessageBox::Cancel);
+        ui->tab_afficher->setModel(A.afficher());
+    }
+        else {
+        QMessageBox::critical(nullptr, QObject::tr(" Not OK"),
+                     QObject::tr("Modification non effectué\n"
+                                "click Cancel to exist."), QMessageBox::Cancel);
+    }
+}
+
+
 
