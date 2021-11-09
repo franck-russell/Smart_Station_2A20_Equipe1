@@ -24,9 +24,15 @@ private slots:
 
     void on_tab_afficher_activated(const QModelIndex &index);
 
-    void on_pb_modifier_clicked();
+    //void on_pb_modifier_clicked();
 
     void on_pb_rechercher_clicked();
+
+    //void on_cb_modifier_currentIndexChanged(int index)
+
+    void on_cb_modifier_currentIndexChanged(int index);
+
+    void on_cb_suppression_activated(const QString &arg1);
 
 private:
     Ui::dialogA *ui;

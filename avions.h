@@ -21,6 +21,7 @@ public:
     bool modifier();
     bool supprimer(int);
     QSqlQueryModel* afficher();
+    QSqlQueryModel* rechercher(int identifiant);
     QSqlQueryModel* afficher_ID();
 private:
     int identifiant;

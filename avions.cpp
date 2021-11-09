@@ -8,7 +8,7 @@
 
 Avions::Avions()
 {
-identifiant=0; capacite=0; type=""; etat="";
+capacite=0; type=""; etat="";
 }
 
 Avions::Avions(int identifiant,int capacite,QString type,QString etat)
@@ -21,6 +21,7 @@ void Avions::setidentifiant(int identifiant){this->identifiant=identifiant;}
 void Avions::setcapacite(int capacite){this->capacite=capacite;}
 void Avions::settype(QString type){this->type=type;}
 void Avions::setetat(QString etat){this->etat=etat;}
+
 bool Avions::ajouter()
 {
     bool test=false;
@@ -43,7 +44,7 @@ bool Avions::modifier()
 
     QSqlQuery query;
     QString res= QString::number(identifiant);
-    query.prepare("UPDATE AVION SET  identifiant=:identifiant, capacite=:capacite, type=:type, etat=:etat)");
+    query.prepare("UPDATE AVION SET  identifiant=:identifiant, capacite=:capacite, type=:type, etat=:etat where identifiant=:identifiant");
     query.bindValue(":identifiant",res );
     query.bindValue(":capacite", capacite);
     query.bindValue(":type", type);
@@ -72,6 +73,24 @@ model->setHeaderData(3,Qt::Horizontal,QObject::tr("etat"));
 return model;
 }
 
+QSqlQueryModel * Avions::rechercher(int identifiant)
+{
+    QSqlQueryModel * model= new QSqlQueryModel();
+    QSqlQuery query;
+
+query.prepare("select * from AVION where identifiant=:identifiant");
+query.bindValue(":identifiant", identifiant);
+
+query.exec();
+model->setQuery(query);
+model->setHeaderData(0,Qt::Horizontal,QObject::tr("identifiant"));
+model->setHeaderData(1,Qt::Horizontal,QObject::tr("capacite"));
+model->setHeaderData(2,Qt::Horizontal,QObject::tr("type"));
+model->setHeaderData(3,Qt::Horizontal,QObject::tr("etat"));
+
+return model;
+
+}
 
 QSqlQueryModel* Avions::afficher_ID()
 {
