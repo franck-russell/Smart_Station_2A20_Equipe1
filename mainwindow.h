@@ -20,8 +20,10 @@ private slots:
     void on_pushButton_ajouter_clicked();
     void on_pushButton_supprimer_clicked();
     void on_pushButton_modifier_clicked();
-    void on_pushButton_loadlist_clicked();
+    void on_pushButton_loadlist_modif_clicked();
     void on_comboBox_modifier_currentIndexChanged(int index);
+    void on_pushButton_loadlist_supp_clicked();
+    void on_comboBox_supprimer_currentIndexChanged(int index);
 private:
     Ui::MainWindow *ui;
     Vol V;

@@ -50,8 +50,7 @@ void MainWindow::on_pushButton_ajouter_clicked()
     }
 }
 
-//for loading list
-void MainWindow::on_pushButton_loadlist_clicked()
+void MainWindow::on_pushButton_loadlist_modif_clicked()
 {
      QSqlQueryModel*  model=new QSqlQueryModel();
      QSqlQuery query;
@@ -59,7 +58,6 @@ void MainWindow::on_pushButton_loadlist_clicked()
      query.exec();
      model->setQuery(query);
      ui->comboBox_modifier->setModel(model);
-
 }
 
 void MainWindow::on_comboBox_modifier_currentIndexChanged(int index)
@@ -84,12 +82,11 @@ void MainWindow::on_comboBox_modifier_currentIndexChanged(int index)
                     QObject::tr("Echec.\n"
                                 "Click Cancel to exit."), QMessageBox::Cancel);
     }
-
 }
 
 void MainWindow::on_pushButton_supprimer_clicked()
 {
-    int numero=ui->lineEdit_numero->text().toInt();
+    int numero=ui->comboBox_supprimer->currentIndex();
     bool test=V.supprimer(numero);
 
     if (test)
@@ -133,4 +130,22 @@ void MainWindow::on_pushButton_modifier_clicked()
                       QObject::tr("Modification non effectuée.\n"
                                   "Click Cancel to exit."), QMessageBox::Cancel);
     }
+}
+
+void MainWindow::on_pushButton_loadlist_supp_clicked()
+{
+     QSqlQueryModel*  model=new QSqlQueryModel();
+     QSqlQuery query;
+     query.prepare("SELECT numero FROM VOL");
+     query.exec();
+     model->setQuery(query);
+     ui->comboBox_supprimer->setModel(model);
+}
+
+void MainWindow::on_comboBox_supprimer_currentIndexChanged(int index)
+{
+    int numero=ui->comboBox_supprimer->currentIndex();
+    QString numero_string=QString::number(numero);
+    QSqlQuery query;
+    query.prepare("DELETE * FROM VOL where numero='"+numero_string+"'");
 }
