@@ -23,6 +23,9 @@ public:
     QSqlQueryModel* afficher();
     QSqlQueryModel* rechercher(int identifiant);
     QSqlQueryModel* afficher_ID();
+    QSqlQueryModel* tri_capacite();
+    QSqlQueryModel* tri_etat();
+    QSqlQueryModel* tri_type();
 private:
     int identifiant;
     int capacite;

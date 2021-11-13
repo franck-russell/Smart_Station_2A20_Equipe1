@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <widget class="QTabWidget" name="AVION">
    <property name="geometry">
     <rect>
@@ -418,6 +421,9 @@ color: rgb(0, 0, 0);
        <height>21</height>
       </rect>
      </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
     </widget>
     <widget class="QLineEdit" name="le_etat_2">
      <property name="geometry">
@@ -427,6 +433,9 @@ color: rgb(0, 0, 0);
        <width>113</width>
        <height>21</height>
       </rect>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
      </property>
     </widget>
     <widget class="QLabel" name="label_7">
@@ -482,7 +491,7 @@ color: rgb(0, 0, 0);
       <rect>
        <x>80</x>
        <y>10</y>
-       <width>80</width>
+       <width>91</width>
        <height>21</height>
       </rect>
      </property>
@@ -493,9 +502,9 @@ color: rgb(0, 0, 0);
     <widget class="QPushButton" name="pushButton_imprimer">
      <property name="geometry">
       <rect>
-       <x>430</x>
-       <y>50</y>
-       <width>80</width>
+       <x>80</x>
+       <y>90</y>
+       <width>91</width>
        <height>21</height>
       </rect>
      </property>
@@ -503,31 +512,11 @@ color: rgb(0, 0, 0);
       <string>Imprimer</string>
      </property>
     </widget>
-    <widget class="QComboBox" name="comboBox_trier">
-     <property name="geometry">
-      <rect>
-       <x>200</x>
-       <y>90</y>
-       <width>81</width>
-       <height>22</height>
-      </rect>
-     </property>
-     <item>
-      <property name="text">
-       <string>Capacité</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Etat</string>
-      </property>
-     </item>
-    </widget>
     <widget class="QPushButton" name="pushButton_docExel">
      <property name="geometry">
       <rect>
-       <x>430</x>
-       <y>10</y>
+       <x>80</x>
+       <y>50</y>
        <width>91</width>
        <height>21</height>
       </rect>
@@ -555,17 +544,17 @@ color: rgb(0, 0, 0);
     <widget class="QLabel" name="label_13">
      <property name="geometry">
       <rect>
-       <x>-30</x>
+       <x>-20</x>
        <y>0</y>
-       <width>731</width>
-       <height>431</height>
+       <width>1551</width>
+       <height>421</height>
       </rect>
      </property>
      <property name="text">
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap>D:/Esprit/2eme année/semestre 1/projet cpp/logo/image6.jpg</pixmap>
+      <pixmap>D:/Esprit/2eme année/semestre 1/projet cpp/logo/image1.jpg</pixmap>
      </property>
     </widget>
     <widget class="QTableView" name="tab_afficher">
@@ -578,41 +567,116 @@ color: rgb(0, 0, 0);
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(85, 200, 255);
+      <string notr="true">background-color:rgb(253, 255, 235);
 border-top-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(0, 0, 0, 255), stop:0.33 rgba(0, 0, 0, 255), stop:0.34 rgba(255, 30, 30, 255), stop:0.66 rgba(255, 0, 0, 255), stop:0.67 rgba(255, 255, 0, 255), stop:1 rgba(255, 255, 0, 255));</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pb_trier">
+    <widget class="QGroupBox" name="groupBox">
      <property name="geometry">
       <rect>
-       <x>80</x>
-       <y>90</y>
-       <width>80</width>
-       <height>21</height>
+       <x>230</x>
+       <y>10</y>
+       <width>120</width>
+       <height>111</height>
       </rect>
      </property>
-     <property name="text">
-      <string>Trier</string>
+     <property name="title">
+      <string>Recherche</string>
      </property>
+     <widget class="QPushButton" name="pb_rechercher">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>50</y>
+        <width>80</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Rechercher</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pb_map">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>80</y>
+        <width>81</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>map</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="le_rechercher">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>81</width>
+        <height>21</height>
+       </rect>
+      </property>
+     </widget>
     </widget>
-    <widget class="QPushButton" name="pb_rechercher">
+    <widget class="QGroupBox" name="groupBox_2">
      <property name="geometry">
       <rect>
-       <x>80</x>
-       <y>50</y>
-       <width>80</width>
-       <height>21</height>
+       <x>380</x>
+       <y>10</y>
+       <width>120</width>
+       <height>111</height>
       </rect>
      </property>
-     <property name="text">
-      <string>Rechercher</string>
+     <property name="title">
+      <string>Trier par:</string>
      </property>
+     <widget class="QPushButton" name="pb_tri_capacite">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>80</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Capacite</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pb_tri_type">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>50</y>
+        <width>80</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Type</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pb_tri_etat">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>80</y>
+        <width>80</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Etat</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QComboBox" name="cb_rechercher">
      <property name="geometry">
       <rect>
-       <x>200</x>
-       <y>50</y>
+       <x>520</x>
+       <y>90</y>
        <width>81</width>
        <height>22</height>
       </rect>
@@ -621,12 +685,11 @@ border-top-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgb
     <zorder>label_13</zorder>
     <zorder>pb_Afficher</zorder>
     <zorder>pushButton_imprimer</zorder>
-    <zorder>comboBox_trier</zorder>
     <zorder>pushButton_docExel</zorder>
     <zorder>label_18</zorder>
     <zorder>tab_afficher</zorder>
-    <zorder>pb_trier</zorder>
-    <zorder>pb_rechercher</zorder>
+    <zorder>groupBox</zorder>
+    <zorder>groupBox_2</zorder>
     <zorder>cb_rechercher</zorder>
    </widget>
    <widget class="QWidget" name="Supprimer">
@@ -652,8 +715,8 @@ border-top-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgb
     <widget class="QPushButton" name="pb_supprimer">
      <property name="geometry">
       <rect>
-       <x>330</x>
-       <y>210</y>
+       <x>410</x>
+       <y>180</y>
        <width>101</width>
        <height>41</height>
       </rect>
@@ -671,7 +734,7 @@ background-color: rgb(255, 30, 30);
     <widget class="QLabel" name="label_12">
      <property name="geometry">
       <rect>
-       <x>0</x>
+       <x>-40</x>
        <y>180</y>
        <width>261</width>
        <height>251</height>
@@ -690,17 +753,17 @@ background-color: rgb(255, 30, 30);
     <widget class="QLabel" name="label_19">
      <property name="geometry">
       <rect>
-       <x>-10</x>
-       <y>-10</y>
-       <width>711</width>
-       <height>461</height>
+       <x>-90</x>
+       <y>-130</y>
+       <width>1281</width>
+       <height>631</height>
       </rect>
      </property>
      <property name="text">
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap>D:/Esprit/2eme année/semestre 1/projet cpp/logo/image6.jpg</pixmap>
+      <pixmap>D:/Esprit/2eme année/semestre 1/projet cpp/logo/image10.jpg</pixmap>
      </property>
     </widget>
     <widget class="QComboBox" name="cb_suppression">
@@ -719,10 +782,10 @@ background-color: rgb(255, 30, 30);
     <widget class="QTableView" name="tb_supprimer">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>120</y>
-       <width>671</width>
-       <height>61</height>
+       <x>50</x>
+       <y>110</y>
+       <width>581</width>
+       <height>51</height>
       </rect>
      </property>
     </widget>

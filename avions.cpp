@@ -4,7 +4,6 @@
 #include <iostream>
 #include <QSql>
 #include <QSqlQueryModel>
-#include <QtDebug>
 
 Avions::Avions()
 {
@@ -58,6 +57,7 @@ bool Avions::supprimer(int identifiant)
     QString res= QString::number(identifiant);
     query.prepare("Delete from AVION where identifiant=:identifiant");
     query.bindValue(":identifiant",res );
+
     return query.exec();
 }
 
@@ -101,6 +101,35 @@ model->setHeaderData(0,Qt::Horizontal,QObject::tr("identifiant"));
 return model;
 }
 
+QSqlQueryModel* Avions::tri_capacite()
+{
+    QSqlQueryModel * model=new QSqlQueryModel();
+       model->setQuery("select * from AVION order by capacite ASC");
+       model->setHeaderData(0,Qt::Horizontal,QObject::tr("identifiant"));
+       model->setHeaderData(1,Qt::Horizontal,QObject::tr("capacite"));
+       model->setHeaderData(2,Qt::Horizontal,QObject::tr("type"));
+       model->setHeaderData(3,Qt::Horizontal,QObject::tr("etat"));
+       return model;
+}
 
+QSqlQueryModel* Avions::tri_etat()
+{
+    QSqlQueryModel * model=new QSqlQueryModel();
+       model->setQuery("select * from AVION order by etat ASC");
+       model->setHeaderData(0,Qt::Horizontal,QObject::tr("identifiant"));
+       model->setHeaderData(1,Qt::Horizontal,QObject::tr("capacite"));
+       model->setHeaderData(2,Qt::Horizontal,QObject::tr("type"));
+       model->setHeaderData(3,Qt::Horizontal,QObject::tr("etat"));
+       return model;
+}
 
-
+QSqlQueryModel* Avions::tri_type()
+{
+    QSqlQueryModel * model=new QSqlQueryModel();
+       model->setQuery("select * from AVION order by type ASC");
+       model->setHeaderData(0,Qt::Horizontal,QObject::tr("identifiant"));
+       model->setHeaderData(1,Qt::Horizontal,QObject::tr("capacite"));
+       model->setHeaderData(2,Qt::Horizontal,QObject::tr("type"));
+       model->setHeaderData(3,Qt::Horizontal,QObject::tr("etat"));
+       return model;
+}

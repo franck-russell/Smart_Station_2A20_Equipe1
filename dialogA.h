@@ -34,6 +34,22 @@ private slots:
 
     void on_cb_suppression_activated(const QString &arg1);
 
+    void on_cb_suppression_activated(int index);
+
+    void on_pb_trier_clicked();
+
+    void on_comboBox_trier_activated(const QString &arg1);
+
+    void on_comboBox_trier_activated(int index);
+
+    void on_cb_tri_activated(const QString &arg1);
+
+    void on_pb_tri_capacite_clicked();
+
+    void on_pb_tri_etat_clicked();
+
+    void on_pb_tri_type_clicked();
+
 private:
     Ui::dialogA *ui;
     Avions A;

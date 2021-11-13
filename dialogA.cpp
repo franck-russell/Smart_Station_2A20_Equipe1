@@ -1,4 +1,4 @@
-#include "dialogA.h"
+ #include "dialogA.h"
 #include "ui_dialogA.h"
 #include <QPixmap>
 #include "avions.h"
@@ -14,11 +14,12 @@ dialogA::dialogA(QWidget *parent) :
     ui->setupUi(this);
     ui->le_identifiant->setValidator(new QIntValidator(0, 999999, this));
     ui->le_capacite->setValidator(new QIntValidator(0, 99, this));
+    ui->le_capacite_2->setValidator(new QIntValidator(0, 99, this));
+    ui->le_rechercher->setValidator(new QIntValidator(0, 999999, this));
     ui->tab_afficher->setModel(A.afficher());
     ui->cb_suppression->setModel(A.afficher_ID());
     ui->cb_modifier->setModel(A.afficher_ID());
-    ui->cb_rechercher->setModel(A.afficher_ID());
-    ui->tb_supprimer->setModel(A.afficher_ID());
+    //ui->cb_rechercher->setModel(A.afficher_ID());
 
 }
 
@@ -47,7 +48,6 @@ void dialogA::on_pb_Ajouter_clicked()
      ui->cb_rechercher->setModel(A.afficher_ID());
  }
      else {
-     identifiant=0;
      QMessageBox::critical(nullptr, QObject::tr(" Not OK"),
                   QObject::tr("Ajout non effectué\n"
                              "click Cancel to exist."), QMessageBox::Cancel);
@@ -67,6 +67,8 @@ void dialogA::on_pb_supprimer_clicked()
                            "click Cancel to exist."), QMessageBox::Cancel);
         ui->tab_afficher->setModel(A.afficher());
         ui->cb_suppression->setModel(A.afficher_ID());
+        ui->cb_modifier->setModel(A.afficher_ID());
+        ui->cb_rechercher->setModel(A.afficher_ID());
 
     }
         else {
@@ -75,13 +77,25 @@ void dialogA::on_pb_supprimer_clicked()
                                 "click Cancel to exist."), QMessageBox::Cancel);
 }
 }
-
+/*
 void dialogA::on_pb_rechercher_clicked()
 {
     Avions A1; A1.setidentifiant(ui->cb_rechercher->currentText().toInt());
     int identifiant=ui->cb_rechercher->currentText().toInt();
     ui->tab_afficher->setModel(A1.rechercher(identifiant));
-  /*  QString test=ui->cb_rechercher->test();
+   QString test=ui->cb_rechercher->test();
+    if(test=="")
+    {
+        ui->tab_afficher->setModel(A.afficher());
+    }
+
+}*/
+void dialogA::on_pb_rechercher_clicked()
+{
+    Avions A1; A1.setidentifiant(ui->le_rechercher->text().toInt());
+    int identifiant=ui->le_rechercher->text().toInt();
+    ui->tab_afficher->setModel(A1.rechercher(identifiant));
+  /*  QString test=ui->le_rechercher->test();
     if(test=="")
     {
         ui->tab_afficher->setModel(A.afficher());
@@ -91,9 +105,10 @@ void dialogA::on_pb_rechercher_clicked()
 
 
 
+
 void dialogA::on_pb_Afficher_clicked()
 {
-
+    ui->tab_afficher->setModel(A.afficher());
 }
 
 
@@ -134,7 +149,8 @@ void dialogA::on_cb_modifier_currentIndexChanged(int index)
     query.prepare("select *from AVION where identifiant=:identifiant");
     query.bindValue(":identifiant",identifiant);
     ui->tab_afficher->setModel(A.afficher());
-    ui->cb_rechercher->setModel(A.afficher_ID());
+   // ui->cb_rechercher->setModel(A.afficher_ID());
+   // ui->cb_suppression->setModel(A.afficher_ID());
 
 
     index++;
@@ -145,6 +161,7 @@ void dialogA::on_cb_modifier_currentIndexChanged(int index)
             ui->le_capacite_2->setText(query.value(1).toString());
             ui->le_type_2->setText(query.value(2).toString());
             ui->le_etat_2->setText(query.value(3).toString());
+            ui->tab_afficher->setModel(A.afficher());
 
         }
     }
@@ -158,4 +175,36 @@ void dialogA::on_cb_modifier_currentIndexChanged(int index)
 }
 
 
+
+
+void dialogA::on_cb_suppression_activated(int index)
+{
+    index ++;
+    Avions A1; A1.setidentifiant(ui->cb_suppression->currentText().toInt());
+    int identifiant=ui->cb_suppression->currentText().toInt();
+    ui->tb_supprimer->setModel(A1.rechercher(identifiant));
+}
+
+
+
+
+void dialogA::on_pb_tri_capacite_clicked()
+{
+    Avions A1;
+    ui->tab_afficher->setModel(A1.tri_capacite());
+}
+
+
+void dialogA::on_pb_tri_etat_clicked()
+{
+    Avions A1;
+    ui->tab_afficher->setModel(A1.tri_etat());
+}
+
+
+void dialogA::on_pb_tri_type_clicked()
+{
+    Avions A1;
+    ui->tab_afficher->setModel(A1.tri_type());
+}
 
