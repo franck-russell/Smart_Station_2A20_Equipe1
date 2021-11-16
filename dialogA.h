@@ -2,6 +2,7 @@
 #define DIALOGA_H
 #include "avions.h"
 #include <QDialog>
+#include <QVariant>
 
 namespace Ui {class dialogA;}
 
@@ -50,9 +51,12 @@ private slots:
 
     void on_pb_tri_type_clicked();
 
+    void on_pb_pdf_clicked();
+
 private:
     Ui::dialogA *ui;
     Avions A;
+    void setCenter(QVariant, QVariant);
 };
 
 #endif // DIALOGA_H
