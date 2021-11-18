@@ -23,27 +23,13 @@ private slots:
 
     void on_pushButton_modifier_2_clicked();
 
-    void on_tab_afficher_activated(const QModelIndex &index);
-
     //void on_pb_modifier_clicked();
 
     void on_pb_rechercher_clicked();
 
-    //void on_cb_modifier_currentIndexChanged(int index)
-
     void on_cb_modifier_currentIndexChanged(int index);
 
-    void on_cb_suppression_activated(const QString &arg1);
-
     void on_cb_suppression_activated(int index);
-
-    void on_pb_trier_clicked();
-
-    void on_comboBox_trier_activated(const QString &arg1);
-
-    void on_comboBox_trier_activated(int index);
-
-    void on_cb_tri_activated(const QString &arg1);
 
     void on_pb_tri_capacite_clicked();
 
@@ -52,6 +38,12 @@ private slots:
     void on_pb_tri_type_clicked();
 
     void on_pb_pdf_clicked();
+
+    void on_pp_docExel_clicked();
+
+    void on_cb_trie_currentIndexChanged(int index);
+
+    void on_le_rechercher_textChanged(const QString &arg1);
 
 private:
     Ui::dialogA *ui;

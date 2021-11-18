@@ -12,6 +12,7 @@
 #include <QPdfWriter>
 #include <QDesktopServices>
 #include <QUrl>
+#include <QFileDialog>
 
 dialogA::dialogA(QWidget *parent) :
     QDialog(parent),
@@ -56,7 +57,7 @@ void dialogA::on_pb_Ajouter_clicked()
      ui->tab_afficher->setModel(A.afficher());
      ui->cb_suppression->setModel(A.afficher_ID());
      ui->cb_modifier->setModel(A.afficher_ID());
-     ui->cb_rechercher->setModel(A.afficher_ID());
+     //ui->cb_rechercher->setModel(A.afficher_ID());
  }
      else {
      QMessageBox::critical(nullptr, QObject::tr(" Not OK"),
@@ -79,7 +80,7 @@ void dialogA::on_pb_supprimer_clicked()
         ui->tab_afficher->setModel(A.afficher());
         ui->cb_suppression->setModel(A.afficher_ID());
         ui->cb_modifier->setModel(A.afficher_ID());
-        ui->cb_rechercher->setModel(A.afficher_ID());
+        //ui->cb_rechercher->setModel(A.afficher_ID());
 
     }
         else {
@@ -140,7 +141,7 @@ void dialogA::on_pushButton_modifier_2_clicked()
                 QObject::tr("Modification avec succes\n"
                            "click Cancel to exist."), QMessageBox::Cancel);
         ui->tab_afficher->setModel(A.afficher());
-        ui->cb_rechercher->setModel(A.afficher_ID());
+        //ui->cb_rechercher->setModel(A.afficher_ID());
     }
         else {
         QMessageBox::critical(nullptr, QObject::tr(" Not OK"),
@@ -226,45 +227,37 @@ void dialogA::on_pb_pdf_clicked()
 
           QPainter painter(&pdf);
 
-          int i = 4000;
-          painter.setPen(Qt::red);
-          painter.setFont(QFont("Arial", 30));
+          int i = 5000;
+          painter.setPen(Qt::blue);
+          painter.setFont(QFont("time new roman", 25));
           painter.drawPixmap(QRect(200,200,2000,2000),QPixmap("D:/Esprit/2eme année/semestre 1/projet cpp/logo/logo4.png"));
-          painter.drawPixmap(QRect(800,800,10000,2000),QPixmap("D:/Esprit/2eme année/semestre 1/projet cpp/logo/esprit.png"));
-          painter.drawText(3000,1500,"INFORMATIONS SUR LES AVIONS");
+          painter.drawPixmap(QRect(7800,150,1700,1700),QPixmap("D:/Esprit/2eme année/semestre 1/projet cpp/logo/esprit.png"));
+          painter.drawText(1900,3500,"INFORMATIONS SUR LES AVIONS");
+          painter.drawText(3400,2500,"SMART STATION");
+          painter.drawText(3900,3000,"SOLID'AIR");
           painter.setPen(Qt::black);
-          painter.setFont(QFont("Arial", 50));
-          // painter.drawText(1100,2000,afficheDC);
-          painter.drawRect(2700,200,7300,2600);
-          //painter.drawRect(1500,200,7300,2600);
-          //painter.drawPixmap(QRect(7600,70,2000,2600),QPixmap("C:/Users/RH/Desktop/projecpp/image/logopdf.png"));
-          painter.drawRect(0,3000,9600,500);
-          painter.setFont(QFont("Arial", 9));
-          painter.drawText(300,3300,"IDENTIFIANT");
-          painter.drawText(2300,3300,"CAPACITE");
-          painter.drawText(4300,3300,"TYPE");
-          painter.drawText(6300,3300,"ETAT");/*
-          painter.drawText(8000,3300,"SEXE");
-          painter.drawText(10300,3300,"NATIONALITE");
-          painter.drawText(12300,3300,"SPECIALITE");
-          painter.drawText(14300,3300,"MAIL");*/
+          painter.setFont(QFont("time new roman", 25));
+          painter.drawRect(1750,2000,6700,1600);
+          painter.drawRect(200,4000,9000,500);
+          painter.setFont(QFont("time new roman", 11));
+          painter.drawText(700,4300,"IDENTIFIANT");
+          painter.drawText(2600,4300,"CAPACITE");
+          painter.drawText(4500,4300,"TYPE");
+          painter.drawText(7000,4300,"ETAT");
           QSqlQuery query;
           query.prepare("select * from AVION");
           query.exec();
           while (query.next())
           {
-              painter.drawText(300,i,query.value(0).toString());
-              painter.drawText(2300,i,query.value(1).toString());
-              painter.drawText(4300,i,query.value(2).toString());
-              painter.drawText(6300,i,query.value(3).toString());/*
-              painter.drawText(8000,i,query.value(4).toString());
-              painter.drawText(10000,i,query.value(5).toString());
-              painter.drawText(12000,i,query.value(6).toString());
-              painter.drawText(14000,i,query.value(7).toString());*/
+              painter.drawText(700,i,query.value(0).toString());
+              painter.drawText(2600,i,query.value(1).toString());
+              painter.drawText(4500,i,query.value(2).toString());
+              painter.drawText(7000,i,query.value(3).toString());
               i = i +500;
           }
 
-          int reponse = QMessageBox::question(this, "Génerer PDF", "<PDF Enregistré>...Vous Voulez Affichez Le PDF ?", QMessageBox::Yes |  QMessageBox::No);
+          int reponse = QMessageBox::question(this, "Génerer PDF", "PDF Enregistré"
+                                                                   "voulez-vous l'afficher?", QMessageBox::Yes |  QMessageBox::No);
           if (reponse == QMessageBox::Yes)
           {
               QDesktopServices::openUrl(QUrl::fromLocalFile("D:/Esprit/2eme année/semestre 1/projet cpp/avion.pdf"));
@@ -276,29 +269,76 @@ void dialogA::on_pb_pdf_clicked()
               painter.end();
           }
 
-          /*painter.setPen(Qt::black);
-          QSqlQuery query;
-          query.prepare("select *from employe");
+}
 
-          if(query.exec())
-          {
 
-              while(query.next())
-              {
-                 painter.drawText(100,0,query.value(0).toString());
-                 painter.drawText(900,800,query.value(1).toString());
-                 painter.drawText(200,200,query.value(2).toString());
-                 painter.drawText(300,300,query.value(3).toString());
-                 painter.drawText(400,400,query.value(4).toString());
-                 painter.drawText(500,500,query.value(5).toString());
+void dialogA::on_pp_docExel_clicked()
+{
+    QTableView *table;
+          table = ui->tab_afficher;
+
+          QString filters("csv files (.csv);;All files (.*)");
+          QString defaultFilter("csv files ("".csv)");
+          QString fileName = QFileDialog::getSaveFileName(0, "Save file", QCoreApplication::applicationDirPath(),
+                             filters, &defaultFilter);
+          QFile file(fileName);
+
+          QAbstractItemModel *model =  table->model();
+          if (file.open(QFile::WriteOnly | QFile::Truncate)) {
+              QTextStream data(&file);
+              QStringList strList;
+              for (int i = 0; i < model->columnCount(); i++) {
+                  if (model->headerData(i, Qt::Horizontal, Qt::DisplayRole).toString().length() > 0)
+                      strList.append("\"" + model->headerData(i, Qt::Horizontal, Qt::DisplayRole).toString() + "\"");
+                  else
+                      strList.append("");
               }
+              data << strList.join(";") << "\n";
+              for (int i = 0; i < model->rowCount(); i++) {
+                  strList.clear();
+                  for (int j = 0; j < model->columnCount(); j++) {
+
+                      if (model->data(model->index(i, j)).toString().length() > 0)
+                          strList.append("\"" + model->data(model->index(i, j)).toString() + "\"");
+                      else
+                          strList.append("");
+                  }
+                  data << strList.join(";") + "\n";
+              }
+              file.close();
+              QMessageBox::information(this,"Exporter To Excel","Exporté avec succées ");
           }
+}
 
 
-          painter.end();
+void dialogA::on_cb_trie_currentIndexChanged(int index)
+{
+    switch(index){
+    case 0:
+        ui->tab_afficher->setModel(A.afficher());
+        break;
+    case 1:
+        ui->tab_afficher->setModel(A.tri_capacite());
+        break;
+    case 2 :
+        ui->tab_afficher->setModel(A.tri_type());
+        break;
+    case 3:
+        ui->tab_afficher->setModel(A.tri_etat());
+        break;
+    }
 
-          QMessageBox::information(nullptr, QObject::tr("PDF"),
-                   QObject::tr("PDF Créer/Modifier avec succes\n""Click Cancel to exit."),QMessageBox::Cancel);*/
+}
 
+void dialogA::on_le_rechercher_textChanged(const QString &arg1)
+{
+    if(ui->le_rechercher->text()!="")
+       {
+         //QString
+        int numero=ui->le_rechercher->text().toInt();
+         ui->tab_afficher->setModel(A.rechercher(numero));
+       }
+       else
+       ui->tab_afficher->setModel(A.afficher());
 }
 
