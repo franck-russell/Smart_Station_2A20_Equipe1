@@ -1,13 +1,22 @@
 #ifndef EMPLACEMENT_H
 #define EMPLACEMENT_H
-#include <string>
 
-class Emplacement
+#include <QDialog>
+
+namespace Ui {
+class Emplacement;
+}
+
+class Emplacement : public QDialog
 {
+    Q_OBJECT
+
+public:
+    explicit Emplacement(QWidget *parent = nullptr);
+    ~Emplacement();
+
 private:
-    int id;
-    int ligne;
-    bool etat;
+    Ui::Emplacement *ui;
 };
 
 #endif // EMPLACEMENT_H
