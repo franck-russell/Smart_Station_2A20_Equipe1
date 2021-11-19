@@ -88,7 +88,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="tab_ajouter">
      <attribute name="title">
@@ -103,6 +103,9 @@
         <height>321</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">font: 75 9pt &quot;MS Shell Dlg 2&quot;;</string>
+      </property>
       <property name="title">
        <string>Vol</string>
       </property>
@@ -115,6 +118,9 @@
          <height>20</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+       </property>
        <property name="text">
         <string>Numero du vol</string>
        </property>
@@ -124,9 +130,12 @@
         <rect>
          <x>80</x>
          <y>120</y>
-         <width>131</width>
+         <width>161</width>
          <height>20</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
        </property>
        <property name="text">
         <string>Destination du vol</string>
@@ -137,9 +146,12 @@
         <rect>
          <x>80</x>
          <y>190</y>
-         <width>121</width>
+         <width>131</width>
          <height>20</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
        </property>
        <property name="text">
         <string>Horaire du vol</string>
@@ -153,6 +165,9 @@
          <width>111</width>
          <height>20</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
        </property>
        <property name="text">
         <string>Suivi du vol</string>
@@ -212,6 +227,25 @@
        <string>Ajouter</string>
       </property>
      </widget>
+     <widget class="QLabel" name="label_11">
+      <property name="geometry">
+       <rect>
+        <x>-360</x>
+        <y>-10</y>
+        <width>1551</width>
+        <height>761</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>../../Desktop/ciel2.jpg</pixmap>
+      </property>
+     </widget>
+     <zorder>label_11</zorder>
+     <zorder>Vol</zorder>
+     <zorder>pushButton_ajouter</zorder>
     </widget>
     <widget class="QWidget" name="tab_modifier">
      <attribute name="title">
@@ -226,6 +260,9 @@
         <height>321</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">font: 75 9pt &quot;MS Shell Dlg 2&quot;;</string>
+      </property>
       <property name="title">
        <string>Vol</string>
       </property>
@@ -237,6 +274,9 @@
          <width>191</width>
          <height>20</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
        </property>
        <property name="text">
         <string>Numero du vol à modifier</string>
@@ -251,6 +291,9 @@
          <height>20</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+       </property>
        <property name="text">
         <string>Destination du vol</string>
        </property>
@@ -264,6 +307,9 @@
          <height>20</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+       </property>
        <property name="text">
         <string>Horaire du vol</string>
        </property>
@@ -276,6 +322,9 @@
          <width>111</width>
          <height>20</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
        </property>
        <property name="text">
         <string>Suivi du vol</string>
@@ -348,6 +397,26 @@
        <string>Load list</string>
       </property>
      </widget>
+     <widget class="QLabel" name="label_12">
+      <property name="geometry">
+       <rect>
+        <x>-360</x>
+        <y>-10</y>
+        <width>1551</width>
+        <height>761</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>../../Desktop/ciel2.jpg</pixmap>
+      </property>
+     </widget>
+     <zorder>label_12</zorder>
+     <zorder>groupBox</zorder>
+     <zorder>pushButton_modifier</zorder>
+     <zorder>pushButton_loadlist_modif</zorder>
     </widget>
     <widget class="QWidget" name="tab_afficher">
      <attribute name="title">
@@ -356,13 +425,120 @@
      <widget class="QTableView" name="tableView">
       <property name="geometry">
        <rect>
-        <x>30</x>
-        <y>30</y>
-        <width>721</width>
-        <height>421</height>
+        <x>20</x>
+        <y>20</y>
+        <width>731</width>
+        <height>341</height>
        </rect>
       </property>
      </widget>
+     <widget class="QLineEdit" name="lineEdit_cherche_numero">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>380</y>
+        <width>171</width>
+        <height>30</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_10">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>380</y>
+        <width>191</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Numero du vol à chercher</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="comboBox_tri">
+      <property name="geometry">
+       <rect>
+        <x>590</x>
+        <y>380</y>
+        <width>141</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>Trier par</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>numero</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>destination</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>horaire</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>suivi</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QPushButton" name="pushButton_PDF">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>430</y>
+        <width>191</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Exporter fichier PDF</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_imprimer">
+      <property name="geometry">
+       <rect>
+        <x>400</x>
+        <y>430</y>
+        <width>191</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Imprimer fichier</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_13">
+      <property name="geometry">
+       <rect>
+        <x>-360</x>
+        <y>-300</y>
+        <width>2131</width>
+        <height>1341</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>../../Desktop/ciel2.jpg</pixmap>
+      </property>
+     </widget>
+     <zorder>label_13</zorder>
+     <zorder>tableView</zorder>
+     <zorder>lineEdit_cherche_numero</zorder>
+     <zorder>label_10</zorder>
+     <zorder>comboBox_tri</zorder>
+     <zorder>pushButton_PDF</zorder>
+     <zorder>pushButton_imprimer</zorder>
     </widget>
     <widget class="QWidget" name="tab_supprimer">
      <attribute name="title">
@@ -417,6 +593,88 @@
        <string>Load list</string>
       </property>
      </widget>
+     <widget class="QLabel" name="label_14">
+      <property name="geometry">
+       <rect>
+        <x>-360</x>
+        <y>-10</y>
+        <width>1551</width>
+        <height>761</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>../../Desktop/ciel2.jpg</pixmap>
+      </property>
+     </widget>
+     <zorder>label_14</zorder>
+     <zorder>label_5</zorder>
+     <zorder>pushButton_supprimer</zorder>
+     <zorder>comboBox_supprimer</zorder>
+     <zorder>pushButton_loadlist_supp</zorder>
+    </widget>
+    <widget class="QWidget" name="tab">
+     <attribute name="title">
+      <string>Générer QR code</string>
+     </attribute>
+     <widget class="QPushButton" name="pushButton_qrcodegen">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>360</y>
+        <width>171</width>
+        <height>34</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Générer un QR code</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="qrcodecommande">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>90</y>
+        <width>291</width>
+        <height>241</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QTableView" name="tableView_2">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>40</y>
+        <width>441</width>
+        <height>401</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_15">
+      <property name="geometry">
+       <rect>
+        <x>-360</x>
+        <y>-10</y>
+        <width>1551</width>
+        <height>761</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>../../Desktop/ciel2.jpg</pixmap>
+      </property>
+     </widget>
+     <zorder>label_15</zorder>
+     <zorder>pushButton_qrcodegen</zorder>
+     <zorder>qrcodecommande</zorder>
+     <zorder>tableView_2</zorder>
     </widget>
    </widget>
   </widget>

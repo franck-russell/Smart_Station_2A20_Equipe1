@@ -1,4 +1,5 @@
 QT       += core gui sql
+QT      += printsupport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -19,11 +20,13 @@ SOURCES += \
     connection.cpp \
     main.cpp \
     mainwindow.cpp \
+    qrcode.cpp \
     vol.cpp
 
 HEADERS += \
     connection.h \
     mainwindow.h \
+    qrcode.h \
     vol.h
 
 FORMS += \

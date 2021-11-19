@@ -4,6 +4,18 @@
 #include <QApplication>
 #include <QMessageBox>
 #include <QIntValidator>
+#include <QPainter>
+#include <QPrinter>
+#include <QSqlQuery>
+#include <QSqlQueryModel>
+#include <QDesktopServices>
+#include <QUrl>
+#include <QFileDialog>
+#include <QFile>
+#include <QPrintDialog>
+#include "qrcode.h"
+
+using namespace qrcodegen ;
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -15,6 +27,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     /*Affichage des colonnes de la table */
     ui->tableView->setModel(V.afficher());
+    ui->tableView_2->setModel(V.afficher());
 }
 
 MainWindow::~MainWindow()
@@ -148,4 +161,145 @@ void MainWindow::on_comboBox_supprimer_currentIndexChanged(int index)
     QString numero_string=QString::number(numero);
     QSqlQuery query;
     query.prepare("DELETE * FROM VOL where numero='"+numero_string+"'");
+}
+
+void MainWindow::on_lineEdit_cherche_numero_textChanged(const QString &arg1)
+{
+    ui->lineEdit_cherche_numero->setValidator(new QIntValidator (0,999999,this));
+    if(ui->lineEdit_cherche_numero->text()!="")
+    {
+      QString numero=ui->lineEdit_cherche_numero->text();
+      ui->tableView->setModel(V.rechercher(numero));
+    }
+    else
+    ui->tableView->setModel(V.afficher());
+}
+
+
+void MainWindow::on_comboBox_tri_currentIndexChanged(const QString &arg1)
+{
+    QString crit=ui->comboBox_tri->currentText();
+    if(crit=="numero")
+    {
+      ui->tableView->setModel(V.trier_par_numero());
+    }
+    else if (crit=="destination")
+    {
+      ui->tableView->setModel(V.trier_par_destination());
+    }
+    else if(crit=="horaire")
+    {
+      ui->tableView->setModel(V.trier_par_horaire());
+    }
+    else
+    {
+      ui->tableView->setModel(V.trier_par_suivi());
+    }
+}
+
+void MainWindow::on_pushButton_PDF_clicked()
+{
+    QPrinter printer(QPrinter::HighResolution);
+    printer.setOutputFormat(QPrinter::PdfFormat);
+    printer.setOutputFileName("C:/Users/HD/Desktop/ESPRIT/2ème année/Semestre 1/Projet C++/liste_des_vols.pdf");
+
+    QPainter painter(&printer);
+    int i = 4000;
+    painter.setPen(Qt::blue);
+    painter.setFont(QFont("Arial", 40));
+    painter.drawText(2200,1200,"Liste des vols ");
+    painter.setPen(Qt::black);
+    painter.setFont(QFont("Arial", 20));
+    painter.drawRect(1000,100,7300,2000);
+    painter.drawRect(0,3000,9600,500);
+    painter.setFont(QFont("Arial",10));
+    painter.drawText(200,3300,"numero");
+    painter.drawText(1500,3300,"destination");
+    painter.drawText(2500,3300,"horaire");
+    painter.drawText(3300,3300,"suivi");
+
+    QSqlQuery query;
+    query.prepare("select * from VOL ");
+    query.exec();
+    while (query.next())
+    {
+        painter.drawText(200,i,query.value(0).toString());
+        painter.drawText(1500,i,query.value(1).toString());
+        painter.drawText(2500,i,query.value(2).toString());
+        painter.drawText(3500,i,query.value(3).toString());
+
+        i = i + 500;
+    }
+
+    int reponse = QMessageBox::question(this, "PDF généré", "Afficher le PDF ?", QMessageBox::Yes |  QMessageBox::No);
+    if (reponse == QMessageBox::Yes)
+    {
+        QDesktopServices::openUrl(QUrl::fromLocalFile("C:/Users/HD/Desktop/ESPRIT/2ème année/Semestre 1/Projet C++/liste_des_vols.pdf"));
+
+        painter.end();
+    }
+    if (reponse == QMessageBox::No)
+    {
+        painter.end();
+    }
+}
+
+
+void MainWindow::on_pushButton_imprimer_clicked()
+{
+    QString fileName = QFileDialog::getOpenFileName(0,"Open File",QString(),"PDF File(*.pdf)");
+
+    QPrinter printer;
+    QPrintDialog *dlg = new QPrintDialog(&printer,0);
+
+    if(dlg->exec() == QDialog::Accepted)
+    {
+        QImage pdf(fileName);
+        QPainter painter(&printer);
+        painter.drawImage(QPoint(0,0),pdf);
+        painter.end();
+    }
+
+    delete dlg;
+}
+
+void MainWindow::on_pushButton_qrcodegen_clicked()
+{
+    int tabeq=ui->tableView_2->currentIndex().row();
+    QVariant idd=ui->tableView_2->model()->data(ui->tableView_2->model()->index(tabeq,0));
+    QString numero= idd.toString();
+    QSqlQuery qry;
+    qry.prepare("select * from VOL where NUMERO=:numero");
+    qry.bindValue(":NUMERO",numero);
+    qry.exec();
+    QString  destination,horaire,suivi;
+
+    while(qry.next())
+    {
+        numero=qry.value(1).toString();
+        destination=qry.value(2).toString();
+        horaire=qry.value(3).toString();
+        suivi=qry.value(4).toString();
+    }
+    numero=QString(numero);
+    numero="NUMERO:"+numero+"DESTINATION:"+destination+"HORAIRE:"+horaire+"SUIVI:"+suivi;
+    QrCode qr = QrCode::encodeText(numero.toUtf8().constData(), QrCode::Ecc::HIGH);
+
+    // Read the black & white pixels
+    QImage im(qr.getSize(),qr.getSize(), QImage::Format_RGB888);
+    for (int y = 0; y < qr.getSize(); y++)
+    {
+    for (int x = 0; x < qr.getSize(); x++)
+    {
+    int color = qr.getModule(x, y);  // 0 for white, 1 for black
+
+    // You need to modify this part
+    if(color==0)
+       im.setPixel(x, y,qRgb(254, 254, 254));
+    else
+       im.setPixel(x, y,qRgb(0, 0, 0));
+    }
+    }
+    im=im.scaled(200,200);
+    ui->qrcodecommande->setPixmap(QPixmap::fromImage(im));
 }
