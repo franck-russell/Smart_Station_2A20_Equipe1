@@ -1,20 +1,20 @@
-#ifndef CHAT_H
-#define CHAT_H
+#ifndef CHAT1_H
+#define CHAT1_H
 
 #include <QDialog>
-#include "ui_chat.h"
+#include "ui_chat1.h"
 #include <QtNetwork>
 
 namespace Ui {
-class chat;
+class chat1;
 }
 
-class chat : public QDialog, private Ui::chat
+class chat1 : public QDialog, private Ui::chat1
 {
     Q_OBJECT
 
 public:
-    chat();
+    chat1();
 
 private slots:
     void on_pb_connexion_clicked();
@@ -30,4 +30,4 @@ private:
     quint16 tailleMessage;
 };
 
-#endif // CHAT_H
+#endif // CHAT1_H

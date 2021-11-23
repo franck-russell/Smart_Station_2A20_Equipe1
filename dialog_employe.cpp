@@ -2,6 +2,7 @@
 #include "chat.h"
 #include "ui_dialog_employe.h"
 #include "employe.h"
+#include "mainwindow.h"
 #include <QApplication>
 #include <QMessageBox>
 #include <QIntValidator>
@@ -142,15 +143,20 @@ void Dialog_employe::on_pb_pdf_clicked()
     QPdfWriter pdf("C:/Users/youss/Desktop/ESPRIT/Projet C++/smart_station/Liste.pdf");
 
     QPainter painter(&pdf);
+    QDate date=QDate::currentDate();
+    QRect r=painter.viewport();
+
 
     int i = 4000;
     painter.setPen(Qt::black);
+    painter.setFont(QFont("Arial", 10));
+    painter.drawText(r,Qt::AlignRight,date.toString("dd.MM.yyyy"));
     painter.setFont(QFont("Arial", 30));
-    painter.drawPixmap(QRect(100,400,2000,2000),QPixmap("C:/Users/youss/Desktop/ESPRIT/Projet C++/smart_station/logo.png"));
-    painter.drawText(3000,1500,"LISTE DES EMPLOYES");
+    painter.drawPixmap(QRect(100,800,2000,2000),QPixmap("C:/Users/youss/Desktop/ESPRIT/Projet C++/smart_station/logo.png"));
+    painter.drawText(3000,1800,"LISTE DES EMPLOYES");
     painter.setPen(Qt::blue);
     painter.setFont(QFont("Arial", 50));
-    painter.drawRect(2700,200,6300,2600);
+    painter.drawRect(2700,700,6300,2000);
     painter.drawRect(0,3000,9600,500);
     painter.setPen(Qt::black);
     painter.setFont(QFont("Arial", 9));
@@ -189,7 +195,11 @@ void Dialog_employe::on_pb_pdf_clicked()
 
 void Dialog_employe::on_pb_chat_clicked()
 {
-    c.exec();
+  c= new chat();
+  c1= new chat1();
+  hide();
+  c->show();
+  c1->show();
 }
 
 void Dialog_employe::on_pb_nettoyer_clicked()
@@ -207,4 +217,32 @@ void Dialog_employe::on_pb_nettoyer_clicked()
     {
         QMessageBox::critical(nullptr,QObject::tr("Not OK"),QObject::tr("Nettoyage non effectue.\n" "Click Cancel to exit."),QMessageBox::Cancel);
     }
+}
+
+void Dialog_employe::on_cb_matricule_currentIndexChanged(int index)
+{
+    int matricule=ui->cb_matricule->currentIndex();
+        QString matricule_string=QString::number(matricule);
+
+        QSqlQuery query;
+        query.prepare("SELECT * FROM EMPLOYE where matricule='"+matricule_string+"'");
+
+        if(query.exec())
+        {
+            while (query.next())
+            {
+          ui->le_matricule->setText(query.value(0).toString());
+              ui->le_nom->setText(query.value(1).toString()) ;
+              ui->le_prenom->setText(query.value(2).toString()) ;
+              ui->le_datenaissance->setText(query.value(3).toString()) ;
+          ui->le_poste->setText(query.value(4).toString()) ;
+          ui->le_salaire->setText(query.value(5).toString()) ;
+            }
+        }
+        else
+        {
+            QMessageBox::critical(nullptr, QObject::tr("NOT OK "),
+                        QObject::tr("Echec.\n"
+                                    "Click Cancel to exit."), QMessageBox::Cancel);
+        }
 }

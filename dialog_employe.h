@@ -3,6 +3,7 @@
 #include "employe.h"
 #include "chat.h"
 #include <QDialog>
+#include "chat1.h"
 
 namespace Ui {
 class Dialog_employe;
@@ -37,10 +38,13 @@ private slots:
 
     void on_pb_nettoyer_clicked();
 
+    void on_cb_matricule_currentIndexChanged(int index);
+
 private:
     Ui::Dialog_employe *ui;
     Employe Etmp;
-    chat c;
+    chat *c;
+    chat1 *c1;
 };
 
 #endif // DIALOG_EMPLOYE_H

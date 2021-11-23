@@ -21,6 +21,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     chat.cpp \
+    chat1.cpp \
     connection.cpp \
     dialog_employe.cpp \
     employe.cpp \
@@ -29,6 +30,7 @@ SOURCES += \
 
 HEADERS += \
     chat.h \
+    chat1.h \
     connection.h \
     dialog_employe.h \
     employe.h \
@@ -36,6 +38,7 @@ HEADERS += \
 
 FORMS += \
     chat.ui \
+    chat1.ui \
     dialog_employe.ui \
     mainwindow.ui
 
