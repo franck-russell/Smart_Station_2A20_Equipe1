@@ -43,7 +43,13 @@ private slots:
 
     void on_cb_trie_currentIndexChanged(int index);
 
-    void on_le_rechercher_textChanged(const QString &arg1);
+    void on_le_recherche_avancee_textChanged();
+
+    void on_pushButton_clicked();
+
+    void on_pb_pageWeb_clicked();
+
+    void on_pushButton_2_clicked();
 
 private:
     Ui::dialogA *ui;

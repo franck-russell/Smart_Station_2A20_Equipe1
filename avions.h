@@ -2,6 +2,8 @@
 #define AVIONS_H
 #include <QSqlQueryModel>
 #include <QString>
+#include <QTableView>
+
 
 
 class Avions
@@ -17,6 +19,8 @@ public:
     void setcapacite(int);
     void settype(QString);
     void setetat(QString);
+    void clearTable(QTableView *table);
+    void rechercher(QTableView *table, int x);
     bool ajouter();
     bool modifier();
     bool supprimer(int);

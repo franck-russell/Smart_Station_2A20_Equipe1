@@ -23,6 +23,7 @@ dialogA::dialogA(QWidget *parent) :
     ui->le_capacite->setValidator(new QIntValidator(0, 99, this));
     ui->le_capacite_2->setValidator(new QIntValidator(0, 99, this));
     ui->le_rechercher->setValidator(new QIntValidator(0, 999999, this));
+    ui->le_recherche_avancee->setValidator(new QIntValidator(0, 999999, this));
     ui->tab_afficher->setModel(A.afficher());
     ui->cb_suppression->setModel(A.afficher_ID());
     ui->cb_modifier->setModel(A.afficher_ID());
@@ -65,7 +66,7 @@ void dialogA::on_pb_Ajouter_clicked()
                              "click Cancel to exist."), QMessageBox::Cancel);
  }
 
-     }
+}
 
 
 void dialogA::on_pb_supprimer_clicked()
@@ -92,10 +93,10 @@ void dialogA::on_pb_supprimer_clicked()
 /*
 void dialogA::on_pb_rechercher_clicked()
 {
-    Avions A1; A1.setidentifiant(ui->cb_rechercher->currentText().toInt());
-    int identifiant=ui->cb_rechercher->currentText().toInt();
+    Avions A1; A1.setidentifiant(ui->pb_rechercher->currentText().toInt());
+    int identifiant=ui->pb_rechercher->text().toInt();
     ui->tab_afficher->setModel(A1.rechercher(identifiant));
-   QString test=ui->cb_rechercher->test();
+   QString test=ui->pb_rechercher->text();
     if(test=="")
     {
         ui->tab_afficher->setModel(A.afficher());
@@ -107,11 +108,11 @@ void dialogA::on_pb_rechercher_clicked()
     Avions A1; A1.setidentifiant(ui->le_rechercher->text().toInt());
     int identifiant=ui->le_rechercher->text().toInt();
     ui->tab_afficher->setModel(A1.rechercher(identifiant));
-  /*  QString test=ui->le_rechercher->test();
+    QString test=ui->le_rechercher->text();
     if(test=="")
     {
         ui->tab_afficher->setModel(A.afficher());
-    }    */
+    }
 
 }
 
@@ -141,7 +142,6 @@ void dialogA::on_pushButton_modifier_2_clicked()
                 QObject::tr("Modification avec succes\n"
                            "click Cancel to exist."), QMessageBox::Cancel);
         ui->tab_afficher->setModel(A.afficher());
-        //ui->cb_rechercher->setModel(A.afficher_ID());
     }
         else {
         QMessageBox::critical(nullptr, QObject::tr(" Not OK"),
@@ -161,7 +161,6 @@ void dialogA::on_cb_modifier_currentIndexChanged(int index)
     query.prepare("select *from AVION where identifiant=:identifiant");
     query.bindValue(":identifiant",identifiant);
     ui->tab_afficher->setModel(A.afficher());
-   // ui->cb_rechercher->setModel(A.afficher_ID());
    // ui->cb_suppression->setModel(A.afficher_ID());
 
 
@@ -278,7 +277,7 @@ void dialogA::on_pp_docExel_clicked()
           table = ui->tab_afficher;
 
           QString filters("csv files (.csv);;All files (.*)");
-          QString defaultFilter("csv files ("".csv)");
+          QString defaultFilter("All files ("".*)");
           QString fileName = QFileDialog::getSaveFileName(0, "Save file", QCoreApplication::applicationDirPath(),
                              filters, &defaultFilter);
           QFile file(fileName);
@@ -308,6 +307,8 @@ void dialogA::on_pp_docExel_clicked()
               file.close();
               QMessageBox::information(this,"Exporter To Excel","Exporté avec succées ");
           }
+
+
 }
 
 
@@ -329,16 +330,43 @@ void dialogA::on_cb_trie_currentIndexChanged(int index)
     }
 
 }
-
+/*
 void dialogA::on_le_rechercher_textChanged(const QString &arg1)
 {
     if(ui->le_rechercher->text()!="")
        {
-         //QString
-        int numero=ui->le_rechercher->text().toInt();
-         ui->tab_afficher->setModel(A.rechercher(numero));
+         QString numero=ui->le_rechercher->text();
+      //   ui->tab_afficher->setModel(A.rechercher(numero));
        }
        else
        ui->tab_afficher->setModel(A.afficher());
+}*/
+
+
+void dialogA::on_le_recherche_avancee_textChanged()
+{
+    A.clearTable(ui->tableView);
+        int identifiant=ui->le_recherche_avancee->text().toInt();
+        A.rechercher(ui->tableView,identifiant);
+
+}
+
+
+
+void dialogA::on_pb_pageWeb_clicked()
+{
+    QDesktopServices::openUrl(QUrl("https://esprit-tn.com/esponline/online/default.aspx",QUrl::TolerantMode));
+}
+
+
+void dialogA::on_pushButton_clicked()
+{
+      QDesktopServices::openUrl(QUrl("https://www.facebook.com/esprit.tn",QUrl::TolerantMode));
+}
+
+
+void dialogA::on_pushButton_2_clicked()
+{
+    QDesktopServices::openUrl(QUrl("https://www.jumia.com.tn/",QUrl::TolerantMode));
 }
 

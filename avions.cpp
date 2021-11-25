@@ -133,3 +133,27 @@ QSqlQueryModel* Avions::tri_type()
        model->setHeaderData(3,Qt::Horizontal,QObject::tr("etat"));
        return model;
 }
+
+void Avions::clearTable(QTableView *table)
+{
+    QSqlQueryModel *model=new QSqlQueryModel();
+    model->clear();
+    table->setModel(model);
+}
+
+void Avions::rechercher(QTableView *table, int x)
+{
+   QSqlQueryModel *model=new QSqlQueryModel();
+   QSqlQuery *query =new QSqlQuery;
+   query->prepare("select * from AVION WHERE regexp_like(identifiant, :identifiant)");
+   query->bindValue(":identifiant",x);
+
+   if(x==0)
+   {
+       query->prepare("select * from AVION;");
+   }
+   query->exec();
+   model->setQuery(*query);
+   table->setModel(model);
+   table->show();
+}
