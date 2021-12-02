@@ -29,11 +29,17 @@ dialogA::dialogA(QWidget *parent) :
     ui->cb_modifier->setModel(A.afficher_ID());
     ui->quickWidget->setSource(QUrl(QStringLiteral("qrc:/map.qml")));
     ui->quickWidget->show();
-
-    auto obj = ui->quickWidget->rootObject();
-    connect(this,SIGNAL(setCenter(QVariant,QVariant)),obj,SLOT(setCenter(QVarfant,QVariant)));
-    //emit setCenter(25.000, 50.000);
-
+/////////////arduino/////////////
+    int ret=O.connect_arduino();
+    switch(ret)
+    {
+    case(0):qDebug()<<"arduino is available and connected to : "<< O.getarduino_port_name();
+        break;
+    case(1):qDebug()<<"arduino is available but not connected to:"<<O.getarduino_port_name();
+        break;
+    case(-1):qDebug()<<"arduino is not available";
+    }
+    QObject::connect(O.getserial(),SIGNAL(readyRead()),this,SLOT(update_label()));
 }
 
 dialogA::~dialogA()
@@ -90,19 +96,7 @@ void dialogA::on_pb_supprimer_clicked()
                                 "click Cancel to exist."), QMessageBox::Cancel);
 }
 }
-/*
-void dialogA::on_pb_rechercher_clicked()
-{
-    Avions A1; A1.setidentifiant(ui->pb_rechercher->currentText().toInt());
-    int identifiant=ui->pb_rechercher->text().toInt();
-    ui->tab_afficher->setModel(A1.rechercher(identifiant));
-   QString test=ui->pb_rechercher->text();
-    if(test=="")
-    {
-        ui->tab_afficher->setModel(A.afficher());
-    }
 
-}*/
 void dialogA::on_pb_rechercher_clicked()
 {
     Avions A1; A1.setidentifiant(ui->le_rechercher->text().toInt());

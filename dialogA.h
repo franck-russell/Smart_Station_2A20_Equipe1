@@ -1,8 +1,9 @@
 #ifndef DIALOGA_H
 #define DIALOGA_H
 #include "avions.h"
+#include "arduino.h"
 #include <QDialog>
-#include <QVariant>
+
 
 namespace Ui {class dialogA;}
 
@@ -22,8 +23,6 @@ private slots:
     void on_pb_supprimer_clicked();
 
     void on_pushButton_modifier_2_clicked();
-
-    //void on_pb_modifier_clicked();
 
     void on_pb_rechercher_clicked();
 
@@ -54,7 +53,8 @@ private slots:
 private:
     Ui::dialogA *ui;
     Avions A;
-    void setCenter(QVariant, QVariant);
+    QByteArray data;
+    arduino O;
 };
 
 #endif // DIALOGA_H
