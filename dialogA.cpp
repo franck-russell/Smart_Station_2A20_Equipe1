@@ -364,3 +364,17 @@ void dialogA::on_pushButton_2_clicked()
     QDesktopServices::openUrl(QUrl("https://www.jumia.com.tn/",QUrl::TolerantMode));
 }
 
+void dialogA::update_label()
+{
+    data=O.read_from_arduino();
+    if(data=="1")
+        ui->label_3->setText("ON");
+    else if (data=="0")
+    ui->label_3->setText("OFF");
+}
+
+void dialogA::on_pushButton_3_clicked()
+{
+         //asas
+}
+
