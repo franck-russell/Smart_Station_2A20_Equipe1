@@ -71,13 +71,13 @@ void MainWindow::on_supprimer_clicked()
     if(test)
     {
 
-        QMessageBox::critical(nullptr, QObject::tr("OK"),
-    QObject::tr("Suppression non effectuée\n"
+        QMessageBox::information(nullptr, QObject::tr("OK"),
+    QObject::tr("Suppression  effectuée\n"
     "Click Cancel to exit."), QMessageBox::Cancel);
     }
     else
-    QMessageBox::information(nullptr, QObject::tr("Not OK"),
-    QObject::tr("Suppression  effectuée.\n"
+    QMessageBox::critical(nullptr, QObject::tr("Not OK"),
+    QObject::tr("Suppression non effectuée.\n"
     "Click Cancel to exit."),QMessageBox::Cancel);
 }
 
@@ -114,7 +114,7 @@ void MainWindow::on_pb_modifier_clicked()
 
 
 
-                       QMessageBox::critical(0,qApp->tr("erreur"),qApp->tr(" L'client a été modifiée."),QMessageBox::Yes);
+                       QMessageBox::information(0,qApp->tr("erreur"),qApp->tr(" L'client a été modifiée."),QMessageBox::Yes);
                         ui->la_cin->clear();
                          ui->le_nom->clear();
                            ui->le_prenom->clear();

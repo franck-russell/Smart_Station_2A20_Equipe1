@@ -465,6 +465,53 @@
       </disabled>
      </palette>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QTabWidget::pane { /* The tab widget frame */
+border-top: 2px solid #2a2a2a; 
+border-left: 2px solid #2a2a2a;
+border-right: 2px solid #2a2a2a ; 
+border-bottom: 2px solid #2a2a2a; 
+background: #dcdcdc;
+	
+	
+	/*border-top-color: rgb(0, 0, 0);*/
+
+}
+QTabWidget::tab-bar {
+left: 0px; /* move to the right by 5px */
+}
+QTabBar::tab {
+
+/*background: #dcdcdc;*/
+	background-color: rgb(123, 176, 255);
+border: 2px solid #535353;
+border-bottom-color: #535353; 
+border-top-left-radius: 7px;
+border-top-right-radius: 7px;
+min-width: 80px;
+padding: 8px;
+color: rgb(50, 50, 162);
+	color: rgb(0, 0, 0);
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
+}
+QTabBar::tab:selected,QTabBar::tab:hover {
+	
+	
+	color: rgb(255, 255, 255);
+	background-color: #535353;
+}
+QTabBar::tab:selected {
+border-color: #9B9B9B;
+border-bottom-color: #535353; /* same as pane color */
+color: #dcdcdc;
+font-size:13px;
+font-family:Arial, Helvetica, sans-serif;
+}
+QTabBar::tab:!selected {
+margin-top: 2px; /* make non-selected tabs look smaller */
+}</string>
+    </property>
     <property name="currentIndex">
      <number>0</number>
     </property>
@@ -495,10 +542,16 @@
        </property>
        <property name="font">
         <font>
-         <family>MS Sans Serif</family>
-         <weight>75</weight>
-         <bold>true</bold>
+         <family>Bernard MT Condensed</family>
+         <pointsize>9</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
         </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #dcdcdc;
+font: 9pt &quot;Bernard MT Condensed&quot;;</string>
        </property>
        <property name="text">
         <string>Carte d'identité</string>
@@ -515,9 +568,16 @@
        </property>
        <property name="font">
         <font>
-         <weight>75</weight>
-         <bold>true</bold>
+         <family>Bernard MT Condensed</family>
+         <pointsize>9</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
         </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #dcdcdc;
+font: 9pt &quot;Bernard MT Condensed&quot;;</string>
        </property>
        <property name="text">
         <string>Nom</string>
@@ -534,9 +594,16 @@
        </property>
        <property name="font">
         <font>
-         <weight>75</weight>
-         <bold>true</bold>
+         <family>Bernard MT Condensed</family>
+         <pointsize>9</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
         </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #dcdcdc;
+font: 9pt &quot;Bernard MT Condensed&quot;;</string>
        </property>
        <property name="text">
         <string>Prénom</string>
@@ -553,9 +620,16 @@
        </property>
        <property name="font">
         <font>
-         <weight>75</weight>
-         <bold>true</bold>
+         <family>Bernard MT Condensed</family>
+         <pointsize>9</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
         </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #dcdcdc;
+font: 9pt &quot;Bernard MT Condensed&quot;;</string>
        </property>
        <property name="text">
         <string>Date de naissance</string>
@@ -572,9 +646,16 @@
        </property>
        <property name="font">
         <font>
-         <weight>75</weight>
-         <bold>true</bold>
+         <family>Bernard MT Condensed</family>
+         <pointsize>9</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
         </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #dcdcdc;
+font: 9pt &quot;Bernard MT Condensed&quot;;</string>
        </property>
        <property name="text">
         <string>Nationalité</string>
@@ -591,9 +672,16 @@
        </property>
        <property name="font">
         <font>
-         <weight>75</weight>
-         <bold>true</bold>
+         <family>Bernard MT Condensed</family>
+         <pointsize>9</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
         </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #dcdcdc;
+font: 9pt &quot;Bernard MT Condensed&quot;;</string>
        </property>
        <property name="text">
         <string>Numéro de Télephone</string>
@@ -610,9 +698,16 @@
        </property>
        <property name="font">
         <font>
-         <weight>75</weight>
-         <bold>true</bold>
+         <family>Bernard MT Condensed</family>
+         <pointsize>9</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
         </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #dcdcdc;
+font: 9pt &quot;Bernard MT Condensed&quot;;</string>
        </property>
        <property name="text">
         <string>Adresse Mails</string>
@@ -627,6 +722,12 @@
          <height>20</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: #dcdcdc;
+color: rgb(0, 0, 0);
+border: 2px solid ;
+  border-radius: 5px</string>
+       </property>
        <property name="text">
         <string/>
        </property>
@@ -640,6 +741,12 @@
          <height>20</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: #dcdcdc;
+color: rgb(0, 0, 0);
+border: 2px solid ;
+  border-radius: 5px</string>
+       </property>
       </widget>
       <widget class="QLineEdit" name="le_prenom">
        <property name="geometry">
@@ -649,6 +756,12 @@
          <width>113</width>
          <height>20</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: #dcdcdc;
+color: rgb(0, 0, 0);
+border: 2px solid ;
+  border-radius: 5px</string>
        </property>
       </widget>
       <widget class="QLineEdit" name="la_nationalite">
@@ -660,6 +773,12 @@
          <height>20</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: #dcdcdc;
+color: rgb(0, 0, 0);
+border: 2px solid ;
+  border-radius: 5px</string>
+       </property>
       </widget>
       <widget class="QLineEdit" name="le_num">
        <property name="geometry">
@@ -669,6 +788,12 @@
          <width>113</width>
          <height>20</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: #dcdcdc;
+color: rgb(0, 0, 0);
+border: 2px solid ;
+  border-radius: 5px</string>
        </property>
       </widget>
       <widget class="QLineEdit" name="adresse_mail">
@@ -680,6 +805,12 @@
          <height>20</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: #dcdcdc;
+color: rgb(0, 0, 0);
+border: 2px solid ;
+  border-radius: 5px</string>
+       </property>
       </widget>
       <widget class="QPushButton" name="pb_ajouter">
        <property name="geometry">
@@ -689,6 +820,22 @@
          <width>93</width>
          <height>28</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+color: rgb(0, 0, 0);
+background:#dcdcdc;
+border: none;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
+border: 2px solid ;
+border-radius: 8px;
+}
+QPushButton:hover {
+color:#fff;
+	background-color:#535353;
+border: none;
+}</string>
        </property>
        <property name="text">
         <string>Ajouter</string>
@@ -702,6 +849,12 @@
          <width>113</width>
          <height>20</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: #dcdcdc;
+color: rgb(0, 0, 0);
+border: 2px solid ;
+  border-radius: 5px</string>
        </property>
       </widget>
       <widget class="QGroupBox" name="groupBox_2">
@@ -738,6 +891,22 @@
           <height>28</height>
          </rect>
         </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+color: rgb(0, 0, 0);
+background:#dcdcdc;
+border: none;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
+border: 2px solid ;
+border-radius: 8px;
+}
+QPushButton:hover {
+color:#fff;
+	background-color:#535353;
+border: none;
+}</string>
+        </property>
         <property name="text">
          <string>Insérer photo </string>
         </property>
@@ -753,6 +922,22 @@
         <height>28</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+color: rgb(0, 0, 0);
+background:#dcdcdc;
+border: none;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
+border: 2px solid ;
+border-radius: 8px;
+}
+QPushButton:hover {
+color:#fff;
+	background-color:#535353;
+border: none;
+}</string>
+      </property>
       <property name="text">
        <string>supprimer</string>
       </property>
@@ -766,27 +951,43 @@
         <height>28</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+color: rgb(0, 0, 0);
+background:#dcdcdc;
+border: none;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
+border: 2px solid ;
+border-radius: 8px;
+}
+QPushButton:hover {
+color:#fff;
+	background-color:#535353;
+border: none;
+}</string>
+      </property>
       <property name="text">
        <string>modifier</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_9">
+     <widget class="QLabel" name="label_8">
       <property name="geometry">
        <rect>
-        <x>-15</x>
-        <y>-25</y>
-        <width>831</width>
-        <height>551</height>
+        <x>-340</x>
+        <y>-140</y>
+        <width>1501</width>
+        <height>701</height>
        </rect>
       </property>
       <property name="text">
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>../../Pictures/Screenshots/toffffff.png</pixmap>
+       <pixmap>../../Pictures/Screenshots/inntt.jpg</pixmap>
       </property>
      </widget>
-     <zorder>label_9</zorder>
+     <zorder>label_8</zorder>
      <zorder>groupBox</zorder>
      <zorder>supprimer</zorder>
      <zorder>pb_modifier</zorder>
@@ -804,6 +1005,12 @@
         <height>311</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #dcdcdc;
+color: rgb(0, 0, 0);
+border: 2px solid ;
+border-radius: 10px</string>
+      </property>
      </widget>
      <widget class="QPushButton" name="tri_cin">
       <property name="geometry">
@@ -813,6 +1020,22 @@
         <width>161</width>
         <height>28</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+color: rgb(0, 0, 0);
+background:#dcdcdc;
+border: none;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
+border: 2px solid ;
+border-radius: 8px;
+}
+QPushButton:hover {
+color:#fff;
+	background-color:#535353;
+border: none;
+}</string>
       </property>
       <property name="text">
        <string>Trier par cin</string>
@@ -827,6 +1050,15 @@
         <height>22</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #dcdcdc;
+color: rgb(0, 0, 0);
+border: 2px solid ;
+  border-radius: 5px</string>
+      </property>
+      <property name="placeholderText">
+       <string>cherche...</string>
+      </property>
      </widget>
      <widget class="QPushButton" name="tri_num">
       <property name="geometry">
@@ -836,6 +1068,22 @@
         <width>161</width>
         <height>28</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+color: rgb(0, 0, 0);
+background:#dcdcdc;
+border: none;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
+border: 2px solid ;
+border-radius: 8px;
+}
+QPushButton:hover {
+color:#fff;
+	background-color:#535353;
+border: none;
+}</string>
       </property>
       <property name="text">
        <string>Trier par num</string>
@@ -850,56 +1098,48 @@
         <height>28</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+color: rgb(0, 0, 0);
+background:#dcdcdc;
+border: none;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
+border: 2px solid ;
+border-radius: 8px;
+}
+QPushButton:hover {
+color:#fff;
+	background-color:#535353;
+border: none;
+}</string>
+      </property>
       <property name="text">
        <string>Trier par adresse mail</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_8">
+     <widget class="QLabel" name="label_9">
       <property name="geometry">
        <rect>
-        <x>440</x>
-        <y>390</y>
-        <width>91</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(147, 129, 200);</string>
-      </property>
-      <property name="text">
-       <string>Rechercher</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_10">
-      <property name="geometry">
-       <rect>
-        <x>-20</x>
-        <y>-5</y>
-        <width>811</width>
-        <height>541</height>
+        <x>-340</x>
+        <y>-140</y>
+        <width>1501</width>
+        <height>701</height>
        </rect>
       </property>
       <property name="text">
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>../../Pictures/Screenshots/toffffff.png</pixmap>
+       <pixmap>../../Pictures/Screenshots/inntt.jpg</pixmap>
       </property>
      </widget>
-     <zorder>label_10</zorder>
+     <zorder>label_9</zorder>
      <zorder>table_clients</zorder>
      <zorder>tri_cin</zorder>
      <zorder>le_recherche</zorder>
      <zorder>tri_num</zorder>
      <zorder>tri_mail</zorder>
-     <zorder>label_8</zorder>
     </widget>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -914,27 +1154,43 @@
         <height>28</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+color: rgb(0, 0, 0);
+background:#dcdcdc;
+border: none;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
+border: 2px solid ;
+border-radius: 8px;
+}
+QPushButton:hover {
+color:#fff;
+	background-color:#535353;
+border: none;
+}</string>
+      </property>
       <property name="text">
        <string>Exporter</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_11">
+     <widget class="QLabel" name="label_10">
       <property name="geometry">
        <rect>
-        <x>-10</x>
-        <y>-25</y>
-        <width>811</width>
-        <height>561</height>
+        <x>-340</x>
+        <y>-140</y>
+        <width>1501</width>
+        <height>701</height>
        </rect>
       </property>
       <property name="text">
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>../../Pictures/Screenshots/toffffff.png</pixmap>
+       <pixmap>../../Pictures/Screenshots/inntt.jpg</pixmap>
       </property>
      </widget>
-     <zorder>label_11</zorder>
+     <zorder>label_10</zorder>
      <zorder>pdf_bt</zorder>
     </widget>
     <widget class="QWidget" name="tab_2">
@@ -950,6 +1206,22 @@
         <height>28</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+color: rgb(0, 0, 0);
+background:#dcdcdc;
+border: none;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
+border: 2px solid ;
+border-radius: 8px;
+}
+QPushButton:hover {
+color:#fff;
+	background-color:#535353;
+border: none;
+}</string>
+      </property>
       <property name="text">
        <string>Envoyer</string>
       </property>
@@ -962,6 +1234,12 @@
         <width>141</width>
         <height>22</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #dcdcdc;
+color: rgb(0, 0, 0);
+border: 2px solid ;
+  border-radius: 5px</string>
       </property>
       <property name="placeholderText">
        <string>mot de passe de mail</string>
@@ -976,6 +1254,12 @@
         <height>22</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #dcdcdc;
+color: rgb(0, 0, 0);
+border: 2px solid ;
+  border-radius: 5px</string>
+      </property>
       <property name="placeholderText">
        <string>destinataire </string>
       </property>
@@ -988,6 +1272,12 @@
         <width>261</width>
         <height>22</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #dcdcdc;
+color: rgb(0, 0, 0);
+border: 2px solid ;
+  border-radius: 5px</string>
       </property>
       <property name="placeholderText">
        <string>objet</string>
@@ -1002,6 +1292,12 @@
         <height>22</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #dcdcdc;
+color: rgb(0, 0, 0);
+border: 2px solid ;
+  border-radius: 5px</string>
+      </property>
       <property name="placeholderText">
        <string>pièce jointe ici </string>
       </property>
@@ -1014,6 +1310,12 @@
         <width>241</width>
         <height>181</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #dcdcdc;
+color: rgb(0, 0, 0);
+border: 2px solid ;
+  border-radius: 5px</string>
       </property>
       <property name="placeholderText">
        <string>tapez votre message ici ...</string>
@@ -1028,27 +1330,43 @@
         <height>28</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+color: rgb(0, 0, 0);
+background:#dcdcdc;
+border: none;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
+border: 2px solid ;
+border-radius: 8px;
+}
+QPushButton:hover {
+color:#fff;
+	background-color:#535353;
+border: none;
+}</string>
+      </property>
       <property name="text">
        <string>browse</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_12">
+     <widget class="QLabel" name="label_11">
       <property name="geometry">
        <rect>
-        <x>-20</x>
-        <y>-15</y>
-        <width>801</width>
-        <height>521</height>
+        <x>-340</x>
+        <y>-140</y>
+        <width>1501</width>
+        <height>701</height>
        </rect>
       </property>
       <property name="text">
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>../../Pictures/Screenshots/toffffff.png</pixmap>
+       <pixmap>../../Pictures/Screenshots/inntt.jpg</pixmap>
       </property>
      </widget>
-     <zorder>label_12</zorder>
+     <zorder>label_11</zorder>
      <zorder>sendBtn</zorder>
      <zorder>mail_pass</zorder>
      <zorder>rcpt</zorder>

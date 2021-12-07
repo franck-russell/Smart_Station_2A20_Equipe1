@@ -70,7 +70,7 @@ bool clients::supprimer(int CIN)
 {
   QSqlQuery query;
     QString res= QString::number(CIN);
-    query.prepare("Delete from CLIENT where CIN = :res ");
+    query.prepare("Delete from CLIENT where CIN = :CIN ");
     query.bindValue(":CIN", res);
 
 
