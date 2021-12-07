@@ -64,8 +64,6 @@ QSqlQueryModel * clients::afficher()
     model->setHeaderData(3, Qt::Horizontal, QObject::tr("ADRESSE_MAIL"));
 
 
-
-
         return model;
 }
 bool clients::supprimer(int CIN)
@@ -76,7 +74,7 @@ bool clients::supprimer(int CIN)
     query.bindValue(":CIN", res);
 
 
-    return    query.exec();
+    return   query.exec();
 
 
 }
