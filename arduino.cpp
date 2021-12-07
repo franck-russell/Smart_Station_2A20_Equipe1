@@ -1,5 +1,12 @@
 #include "arduino.h"
 
+arduino::arduino()
+{
+    data="";
+    arduino_port_name="";
+    arduino_is_available="";
+    serial=new QSerialPort;
+}
 int arduino::connect_arduino()
 {
     foreach (const QSerialPortInfo &serial_port_info, QSerialPortInfo::availablePorts())
@@ -59,3 +66,14 @@ int arduino::write_to_arduino(QByteArray d)
     }
     return 0;
 }
+
+QString arduino::getarduino_port_name()
+{
+    return arduino_port_name;
+}
+
+QSerialPort* arduino::getserial()
+{
+    return serial;
+}
+

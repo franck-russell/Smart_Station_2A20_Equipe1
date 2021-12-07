@@ -50,6 +50,9 @@ private slots:
 
     void on_pushButton_2_clicked();
 
+
+    void update_label();
+
 private:
     Ui::dialogA *ui;
     Avions A;

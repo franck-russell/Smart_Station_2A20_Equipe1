@@ -7,7 +7,7 @@
 
 Avions::Avions()
 {
-capacite=0; type=""; etat="";
+identifiant=0; capacite=0; type=""; etat="";
 }
 
 Avions::Avions(int identifiant,int capacite,QString type,QString etat)

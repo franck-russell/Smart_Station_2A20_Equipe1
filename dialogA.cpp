@@ -2,6 +2,7 @@
 #include "ui_dialogA.h"
 #include <QPixmap>
 #include "avions.h"
+#include "arduino.h"
 #include <QMessageBox>
 #include <QIntValidator>
 #include <QDebug>
@@ -13,6 +14,7 @@
 #include <QDesktopServices>
 #include <QUrl>
 #include <QFileDialog>
+
 
 dialogA::dialogA(QWidget *parent) :
     QDialog(parent),
@@ -27,8 +29,6 @@ dialogA::dialogA(QWidget *parent) :
     ui->tab_afficher->setModel(A.afficher());
     ui->cb_suppression->setModel(A.afficher_ID());
     ui->cb_modifier->setModel(A.afficher_ID());
-    ui->quickWidget->setSource(QUrl(QStringLiteral("qrc:/map.qml")));
-    ui->quickWidget->show();
 /////////////arduino/////////////
     int ret=O.connect_arduino();
     switch(ret)
@@ -339,9 +339,9 @@ void dialogA::on_le_rechercher_textChanged(const QString &arg1)
 
 void dialogA::on_le_recherche_avancee_textChanged()
 {
-    A.clearTable(ui->tableView);
+    A.clearTable(ui->tab_afficher);
         int identifiant=ui->le_recherche_avancee->text().toInt();
-        A.rechercher(ui->tableView,identifiant);
+        A.rechercher(ui->tab_afficher,identifiant);
 
 }
 
@@ -366,15 +366,17 @@ void dialogA::on_pushButton_2_clicked()
 
 void dialogA::update_label()
 {
+    //QString temp;
+    //while(O.read_from_arduino())
+    QString data;
     data=O.read_from_arduino();
+    ui->temp->setText(data);
+    /*O.write_to_arduino("3");
     if(data=="1")
         ui->label_3->setText("ON");
     else if (data=="0")
-    ui->label_3->setText("OFF");
+    ui->label_3->setText("OFF");*/
 }
 
-void dialogA::on_pushButton_3_clicked()
-{
-         //asas
-}
+
 
