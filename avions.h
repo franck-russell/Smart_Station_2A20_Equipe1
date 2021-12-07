@@ -20,7 +20,7 @@ public:
     void settype(QString);
     void setetat(QString);
     void clearTable(QTableView *table);
-    void rechercher(QTableView *table, int x);
+    void recherche_avancee(QTableView *table, int x);
     bool ajouter();
     bool modifier();
     bool supprimer(int);

@@ -64,7 +64,6 @@ void dialogA::on_pb_Ajouter_clicked()
      ui->tab_afficher->setModel(A.afficher());
      ui->cb_suppression->setModel(A.afficher_ID());
      ui->cb_modifier->setModel(A.afficher_ID());
-     //ui->cb_rechercher->setModel(A.afficher_ID());
  }
      else {
      QMessageBox::critical(nullptr, QObject::tr(" Not OK"),
@@ -87,8 +86,6 @@ void dialogA::on_pb_supprimer_clicked()
         ui->tab_afficher->setModel(A.afficher());
         ui->cb_suppression->setModel(A.afficher_ID());
         ui->cb_modifier->setModel(A.afficher_ID());
-        //ui->cb_rechercher->setModel(A.afficher_ID());
-
     }
         else {
         QMessageBox::critical(nullptr, QObject::tr(" Not OK"),
@@ -126,7 +123,6 @@ void dialogA::on_pushButton_modifier_2_clicked()
     int capacite=ui->le_capacite_2->text().toInt();
     QString type=ui->cb_type_2->currentText();
     QString etat=ui->cb_etat_2->currentText();
-    //qDebug()<<capacite;
 
     Avions A(identifiant,capacite,type,etat);
     bool test=A.modifier();
@@ -156,7 +152,6 @@ void dialogA::on_cb_modifier_currentIndexChanged(int index)
     query.bindValue(":identifiant",identifiant);
     ui->tab_afficher->setModel(A.afficher());
    // ui->cb_suppression->setModel(A.afficher_ID());
-
 
     index++;
     if(query.exec())
@@ -188,29 +183,6 @@ void dialogA::on_cb_suppression_activated(int index)
     Avions A1; A1.setidentifiant(ui->cb_suppression->currentText().toInt());
     int identifiant=ui->cb_suppression->currentText().toInt();
     ui->tb_supprimer->setModel(A1.rechercher(identifiant));
-}
-
-
-
-
-void dialogA::on_pb_tri_capacite_clicked()
-{
-    Avions A1;
-    ui->tab_afficher->setModel(A1.tri_capacite());
-}
-
-
-void dialogA::on_pb_tri_etat_clicked()
-{
-    Avions A1;
-    ui->tab_afficher->setModel(A1.tri_etat());
-}
-
-
-void dialogA::on_pb_tri_type_clicked()
-{
-    Avions A1;
-    ui->tab_afficher->setModel(A1.tri_type());
 }
 
 
@@ -265,7 +237,7 @@ void dialogA::on_pb_pdf_clicked()
 }
 
 
-void dialogA::on_pp_docExel_clicked()
+void dialogA::on_pb_docExel_clicked()
 {
     QTableView *table;
           table = ui->tab_afficher;
@@ -301,8 +273,6 @@ void dialogA::on_pp_docExel_clicked()
               file.close();
               QMessageBox::information(this,"Exporter To Excel","Exporté avec succées ");
           }
-
-
 }
 
 
@@ -324,27 +294,15 @@ void dialogA::on_cb_trie_currentIndexChanged(int index)
     }
 
 }
-/*
-void dialogA::on_le_rechercher_textChanged(const QString &arg1)
-{
-    if(ui->le_rechercher->text()!="")
-       {
-         QString numero=ui->le_rechercher->text();
-      //   ui->tab_afficher->setModel(A.rechercher(numero));
-       }
-       else
-       ui->tab_afficher->setModel(A.afficher());
-}*/
 
 
 void dialogA::on_le_recherche_avancee_textChanged()
 {
     A.clearTable(ui->tab_afficher);
         int identifiant=ui->le_recherche_avancee->text().toInt();
-        A.rechercher(ui->tab_afficher,identifiant);
+        A.recherche_avancee(ui->tab_afficher,identifiant);
 
 }
-
 
 
 void dialogA::on_pb_pageWeb_clicked()
@@ -353,30 +311,36 @@ void dialogA::on_pb_pageWeb_clicked()
 }
 
 
-void dialogA::on_pushButton_clicked()
+void dialogA::on_pb_pageweb_3_clicked()
 {
       QDesktopServices::openUrl(QUrl("https://www.facebook.com/esprit.tn",QUrl::TolerantMode));
 }
 
 
-void dialogA::on_pushButton_2_clicked()
+void dialogA::on_pb_pageweb_2_clicked()
 {
     QDesktopServices::openUrl(QUrl("https://www.jumia.com.tn/",QUrl::TolerantMode));
 }
 
 void dialogA::update_label()
 {
-    //QString temp;
-    //while(O.read_from_arduino())
+
     QString data;
     data=O.read_from_arduino();
     ui->temp->setText(data);
-    /*O.write_to_arduino("3");
-    if(data=="1")
-        ui->label_3->setText("ON");
-    else if (data=="0")
-    ui->label_3->setText("OFF");*/
 }
 
 
+
+
+void dialogA::on_activer_clicked()
+{
+    O.write_to_arduino("1"); //envoyer 1 à arduino
+}
+
+
+void dialogA::on_arreter_clicked()
+{
+    O.write_to_arduino("2");
+}
 

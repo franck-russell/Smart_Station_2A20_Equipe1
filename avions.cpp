@@ -39,8 +39,6 @@ bool Avions::ajouter()
 
 bool Avions::modifier()
 {
-    //bool test=false;
-
     QSqlQuery query;
     QString res= QString::number(identifiant);
     query.prepare("UPDATE AVION SET  identifiant=:identifiant, capacite=:capacite, type=:type, etat=:etat where identifiant=:identifiant");
@@ -51,6 +49,7 @@ bool Avions::modifier()
     return query.exec();
 
 }
+
 bool Avions::supprimer(int identifiant)
 {
     QSqlQuery query;
@@ -141,7 +140,7 @@ void Avions::clearTable(QTableView *table)
     table->setModel(model);
 }
 
-void Avions::rechercher(QTableView *table, int x)
+void Avions::recherche_avancee(QTableView *table, int x)
 {
    QSqlQueryModel *model=new QSqlQueryModel();
    QSqlQuery *query =new QSqlQuery;

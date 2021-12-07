@@ -73,7 +73,7 @@ margin-top: 2px; /* make non-selected tabs look smaller */
 }</string>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
@@ -249,8 +249,8 @@ border: none;
       <rect>
        <x>-50</x>
        <y>-40</y>
-       <width>1661</width>
-       <height>461</height>
+       <width>1000</width>
+       <height>500</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -333,6 +333,80 @@ border: 2px solid ;
       </property>
      </item>
     </widget>
+    <widget class="QLabel" name="label_22">
+     <property name="geometry">
+      <rect>
+       <x>580</x>
+       <y>30</y>
+       <width>31</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string>°C</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="temp">
+     <property name="geometry">
+      <rect>
+       <x>420</x>
+       <y>60</y>
+       <width>71</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="temperature_2">
+     <property name="geometry">
+      <rect>
+       <x>400</x>
+       <y>20</y>
+       <width>71</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string>temperarure:</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="activer">
+     <property name="geometry">
+      <rect>
+       <x>540</x>
+       <y>110</y>
+       <width>101</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>activer</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="arreter">
+     <property name="geometry">
+      <rect>
+       <x>540</x>
+       <y>160</y>
+       <width>101</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>arreter</string>
+     </property>
+    </widget>
     <zorder>label_16</zorder>
     <zorder>label</zorder>
     <zorder>label_2</zorder>
@@ -345,6 +419,11 @@ border: 2px solid ;
     <zorder>label_15</zorder>
     <zorder>cb_etat</zorder>
     <zorder>cb_type</zorder>
+    <zorder>label_22</zorder>
+    <zorder>temp</zorder>
+    <zorder>temperature_2</zorder>
+    <zorder>activer</zorder>
+    <zorder>arreter</zorder>
    </widget>
    <widget class="QWidget" name="tab_2">
     <attribute name="title">
@@ -553,10 +632,10 @@ border: 2px solid ;
     <widget class="QLabel" name="label_6">
      <property name="geometry">
       <rect>
-       <x>-40</x>
-       <y>-50</y>
-       <width>1121</width>
-       <height>481</height>
+       <x>-50</x>
+       <y>-40</y>
+       <width>1000</width>
+       <height>500</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -721,7 +800,7 @@ border: none;
       <string>Export pdf</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pp_docExel">
+    <widget class="QPushButton" name="pb_docExel">
      <property name="geometry">
       <rect>
        <x>70</x>
@@ -757,7 +836,7 @@ border: none;
        <x>40</x>
        <y>120</y>
        <width>621</width>
-       <height>271</height>
+       <height>281</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -859,7 +938,7 @@ border: 2px solid ;
        <rect>
         <x>10</x>
         <y>40</y>
-        <width>72</width>
+        <width>91</width>
         <height>22</height>
        </rect>
       </property>
@@ -891,54 +970,6 @@ border: 2px solid ;
        </property>
       </item>
      </widget>
-    </widget>
-    <widget class="QLabel" name="temperature_2">
-     <property name="geometry">
-      <rect>
-       <x>330</x>
-       <y>100</y>
-       <width>61</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(0, 0, 0);</string>
-     </property>
-     <property name="text">
-      <string>temperarure:</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="temp">
-     <property name="geometry">
-      <rect>
-       <x>410</x>
-       <y>100</y>
-       <width>41</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(255, 255, 0);</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_22">
-     <property name="geometry">
-      <rect>
-       <x>470</x>
-       <y>100</y>
-       <width>31</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(0, 255, 0);</string>
-     </property>
-     <property name="text">
-      <string>°C</string>
-     </property>
     </widget>
     <widget class="QGroupBox" name="groupBox_3">
      <property name="geometry">
@@ -982,7 +1013,7 @@ border: none;
        <string>esprit</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_2">
+     <widget class="QPushButton" name="pb_pageweb_2">
       <property name="geometry">
        <rect>
         <x>0</x>
@@ -1012,7 +1043,7 @@ border: none;
        <string>Solid'Air</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="pb_pageweb_3">
       <property name="geometry">
        <rect>
         <x>0</x>
@@ -1046,10 +1077,10 @@ border: none;
     <widget class="QLabel" name="label_13">
      <property name="geometry">
       <rect>
-       <x>-14</x>
-       <y>-18</y>
-       <width>771</width>
-       <height>401</height>
+       <x>-50</x>
+       <y>-40</y>
+       <width>1000</width>
+       <height>500</height>
       </rect>
      </property>
      <property name="text">
@@ -1062,13 +1093,10 @@ border: none;
     <zorder>label_13</zorder>
     <zorder>pb_Afficher</zorder>
     <zorder>pb_pdf</zorder>
-    <zorder>pp_docExel</zorder>
+    <zorder>pb_docExel</zorder>
     <zorder>tab_afficher</zorder>
     <zorder>groupBox</zorder>
     <zorder>groupBox_2</zorder>
-    <zorder>temperature_2</zorder>
-    <zorder>temp</zorder>
-    <zorder>label_22</zorder>
     <zorder>groupBox_3</zorder>
    </widget>
    <widget class="QWidget" name="Supprimer">
@@ -1177,10 +1205,10 @@ border-radius: 10px</string>
     <widget class="QLabel" name="label_18">
      <property name="geometry">
       <rect>
-       <x>-30</x>
-       <y>-90</y>
-       <width>841</width>
-       <height>641</height>
+       <x>-50</x>
+       <y>-40</y>
+       <width>1000</width>
+       <height>500</height>
       </rect>
      </property>
      <property name="styleSheet">
