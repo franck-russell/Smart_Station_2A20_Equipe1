@@ -14,6 +14,7 @@
 #include <QFile>
 #include <QPrintDialog>
 #include "qrcode.h"
+#include <QDate>
 
 using namespace qrcodegen ;
 
@@ -197,26 +198,37 @@ void MainWindow::on_comboBox_tri_currentIndexChanged(const QString &arg1)
     }
 }
 
+QString currDate()
+{
+    QDate date = QDate::currentDate();
+    return date.toString("dd.MM.yyyy");
+}
+
 void MainWindow::on_pushButton_PDF_clicked()
 {
+
     QPrinter printer(QPrinter::HighResolution);
     printer.setOutputFormat(QPrinter::PdfFormat);
     printer.setOutputFileName("C:/Users/HD/Desktop/ESPRIT/2ème année/Semestre 1/Projet C++/liste_des_vols.pdf");
 
     QPainter painter(&printer);
+    painter.drawPixmap(QRect(100,400,2000,2000),QPixmap("C:/Users/HD/Desktop/ESPRIT/2ème année/Semestre 1/Projet C++/logo.png"));
     int i = 4000;
     painter.setPen(Qt::blue);
     painter.setFont(QFont("Arial", 40));
-    painter.drawText(2200,1200,"Liste des vols ");
+    painter.drawText(3000,1500,"Liste des vols ");
     painter.setPen(Qt::black);
     painter.setFont(QFont("Arial", 20));
-    painter.drawRect(1000,100,7300,2000);
+    painter.drawRect(2700,200,6000,2000);
     painter.drawRect(0,3000,9600,500);
     painter.setFont(QFont("Arial",10));
     painter.drawText(200,3300,"numero");
     painter.drawText(1500,3300,"destination");
     painter.drawText(2500,3300,"horaire");
     painter.drawText(3300,3300,"suivi");
+
+    QString date= currDate() ;
+    painter.drawText(8500,30,date);
 
     QSqlQuery query;
     query.prepare("select * from VOL ");
@@ -302,4 +314,7 @@ void MainWindow::on_pushButton_qrcodegen_clicked()
     }
     im=im.scaled(200,200);
     ui->qrcodecommande->setPixmap(QPixmap::fromImage(im));
+}
+
+
 }

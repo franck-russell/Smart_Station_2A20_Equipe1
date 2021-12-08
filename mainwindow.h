@@ -30,6 +30,8 @@ private slots:
     void on_pushButton_imprimer_clicked();
     void on_pushButton_qrcodegen_clicked();
 
+    void serial_read();
+
 private:
     Ui::MainWindow *ui;
     Vol V;

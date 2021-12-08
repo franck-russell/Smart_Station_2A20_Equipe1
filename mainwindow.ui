@@ -87,6 +87,53 @@
       <height>511</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QTabWidget::pane { /* The tab widget frame */
+border-top: 2px solid #2a2a2a; 
+border-left: 2px solid #2a2a2a;
+border-right: 2px solid #2a2a2a ; 
+border-bottom: 2px solid #2a2a2a; 
+background: #dcdcdc;
+	
+	
+	/*border-top-color: rgb(0, 0, 0);*/
+
+}
+QTabWidget::tab-bar {
+left: 0px; /* move to the right by 5px */
+}
+QTabBar::tab {
+
+/*background: #dcdcdc;*/
+	background-color: rgb(123, 176, 255);
+border: 2px solid #535353;
+border-bottom-color: #535353; 
+border-top-left-radius: 7px;
+border-top-right-radius: 7px;
+min-width: 80px;
+padding: 8px;
+color: rgb(50, 50, 162);
+	color: rgb(0, 0, 0);
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
+}
+QTabBar::tab:selected,QTabBar::tab:hover {
+	
+	
+	color: rgb(255, 255, 255);
+	background-color: #535353;
+}
+QTabBar::tab:selected {
+border-color: #9B9B9B;
+border-bottom-color: #535353; /* same as pane color */
+color: #dcdcdc;
+font-size:13px;
+font-family:Arial, Helvetica, sans-serif;
+}
+QTabBar::tab:!selected {
+margin-top: 2px; /* make non-selected tabs look smaller */
+}</string>
+    </property>
     <property name="currentIndex">
      <number>2</number>
     </property>
@@ -114,15 +161,16 @@
         <rect>
          <x>80</x>
          <y>50</y>
-         <width>151</width>
-         <height>20</height>
+         <width>150</width>
+         <height>25</height>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+        <string notr="true">color: #dcdcdc;
+font: 9pt &quot;Bernard MT Condensed&quot;;</string>
        </property>
        <property name="text">
-        <string>Numero du vol</string>
+        <string>     Numero du vol</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_2">
@@ -130,15 +178,16 @@
         <rect>
          <x>80</x>
          <y>120</y>
-         <width>161</width>
-         <height>20</height>
+         <width>150</width>
+         <height>25</height>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+        <string notr="true">color: #dcdcdc;
+font: 9pt &quot;Bernard MT Condensed&quot;;</string>
        </property>
        <property name="text">
-        <string>Destination du vol</string>
+        <string>   Destination du vol</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_3">
@@ -146,15 +195,16 @@
         <rect>
          <x>80</x>
          <y>190</y>
-         <width>131</width>
-         <height>20</height>
+         <width>150</width>
+         <height>25</height>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+        <string notr="true">color: #dcdcdc;
+font: 9pt &quot;Bernard MT Condensed&quot;;</string>
        </property>
        <property name="text">
-        <string>Horaire du vol</string>
+        <string>      Horaire du vol</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_4">
@@ -162,15 +212,16 @@
         <rect>
          <x>80</x>
          <y>260</y>
-         <width>111</width>
-         <height>20</height>
+         <width>150</width>
+         <height>25</height>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+        <string notr="true">color: #dcdcdc;
+font: 9pt &quot;Bernard MT Condensed&quot;;</string>
        </property>
        <property name="text">
-        <string>Suivi du vol</string>
+        <string>       Suivi du vol</string>
        </property>
       </widget>
       <widget class="QLineEdit" name="lineEdit_numero">
@@ -182,6 +233,12 @@
          <height>25</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: #dcdcdc;
+color: rgb(0, 0, 0);
+border: 2px solid ;
+border-radius: 5px;</string>
+       </property>
       </widget>
       <widget class="QLineEdit" name="lineEdit_destination">
        <property name="geometry">
@@ -191,6 +248,12 @@
          <width>171</width>
          <height>25</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: #dcdcdc;
+color: rgb(0, 0, 0);
+border: 2px solid ;
+border-radius: 5px</string>
        </property>
       </widget>
       <widget class="QLineEdit" name="lineEdit_horaire">
@@ -202,6 +265,12 @@
          <height>25</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: #dcdcdc;
+color: rgb(0, 0, 0);
+border: 2px solid ;
+border-radius: 5px</string>
+       </property>
       </widget>
       <widget class="QLineEdit" name="lineEdit_suivi">
        <property name="geometry">
@@ -211,6 +280,12 @@
          <width>171</width>
          <height>25</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: #dcdcdc;
+color: rgb(0, 0, 0);
+border: 2px solid ;
+border-radius: 5px</string>
        </property>
       </widget>
      </widget>
@@ -223,6 +298,22 @@
         <height>34</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+color: rgb(0, 0, 0);
+background:#dcdcdc;
+border: none;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
+border: 2px solid ;
+border-radius: 8px;
+}
+QPushButton:hover {
+color:#fff;
+	background-color:#535353;
+border: none;
+}</string>
+      </property>
       <property name="text">
        <string>Ajouter</string>
       </property>
@@ -230,17 +321,17 @@
      <widget class="QLabel" name="label_11">
       <property name="geometry">
        <rect>
-        <x>-360</x>
-        <y>-10</y>
-        <width>1551</width>
-        <height>761</height>
+        <x>-340</x>
+        <y>-140</y>
+        <width>1501</width>
+        <height>701</height>
        </rect>
       </property>
       <property name="text">
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>../../Desktop/ciel2.jpg</pixmap>
+       <pixmap>../../Desktop/ciel.jpg</pixmap>
       </property>
      </widget>
      <zorder>label_11</zorder>
@@ -272,11 +363,12 @@
          <x>80</x>
          <y>50</y>
          <width>191</width>
-         <height>20</height>
+         <height>25</height>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+        <string notr="true">color: #dcdcdc;
+font: 9pt &quot;Bernard MT Condensed&quot;;</string>
        </property>
        <property name="text">
         <string>Numero du vol à modifier</string>
@@ -287,15 +379,16 @@
         <rect>
          <x>80</x>
          <y>120</y>
-         <width>131</width>
-         <height>20</height>
+         <width>150</width>
+         <height>25</height>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+        <string notr="true">color: #dcdcdc;
+font: 9pt &quot;Bernard MT Condensed&quot;;</string>
        </property>
        <property name="text">
-        <string>Destination du vol</string>
+        <string>   Destination du vol</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_8">
@@ -303,15 +396,16 @@
         <rect>
          <x>80</x>
          <y>190</y>
-         <width>121</width>
-         <height>20</height>
+         <width>150</width>
+         <height>25</height>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+        <string notr="true">color: #dcdcdc;
+font: 9pt &quot;Bernard MT Condensed&quot;;</string>
        </property>
        <property name="text">
-        <string>Horaire du vol</string>
+        <string>      Horaire du vol</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_9">
@@ -319,15 +413,16 @@
         <rect>
          <x>80</x>
          <y>260</y>
-         <width>111</width>
-         <height>20</height>
+         <width>150</width>
+         <height>25</height>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+        <string notr="true">color: #dcdcdc;
+font: 9pt &quot;Bernard MT Condensed&quot;;</string>
        </property>
        <property name="text">
-        <string>Suivi du vol</string>
+        <string>       Suivi du vol</string>
        </property>
       </widget>
       <widget class="QLineEdit" name="lineEdit_modif_destination">
@@ -339,6 +434,12 @@
          <height>25</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: #dcdcdc;
+color: rgb(0, 0, 0);
+border: 2px solid ;
+  border-radius: 5px</string>
+       </property>
       </widget>
       <widget class="QLineEdit" name="lineEdit_modif_horaire">
        <property name="geometry">
@@ -348,6 +449,12 @@
          <width>171</width>
          <height>25</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: #dcdcdc;
+color: rgb(0, 0, 0);
+border: 2px solid ;
+  border-radius: 5px</string>
        </property>
       </widget>
       <widget class="QLineEdit" name="lineEdit_modif_suivi">
@@ -359,6 +466,12 @@
          <height>25</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: #dcdcdc;
+color: rgb(0, 0, 0);
+border: 2px solid ;
+  border-radius: 5px</string>
+       </property>
       </widget>
       <widget class="QComboBox" name="comboBox_modifier">
        <property name="geometry">
@@ -368,6 +481,12 @@
          <width>171</width>
          <height>25</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: #dcdcdc;
+color: rgb(0, 0, 0);
+border: 2px solid ;
+  border-radius: 5px</string>
        </property>
       </widget>
      </widget>
@@ -379,6 +498,22 @@
         <width>112</width>
         <height>34</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+color: rgb(0, 0, 0);
+background:#dcdcdc;
+border: none;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
+border: 2px solid ;
+border-radius: 8px;
+}
+QPushButton:hover {
+color:#fff;
+	background-color:#535353;
+border: none;
+}</string>
       </property>
       <property name="text">
        <string>Modifier</string>
@@ -393,6 +528,22 @@
         <height>34</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+color: rgb(0, 0, 0);
+background:#dcdcdc;
+border: none;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
+border: 2px solid ;
+border-radius: 8px;
+}
+QPushButton:hover {
+color:#fff;
+	background-color:#535353;
+border: none;
+}</string>
+      </property>
       <property name="text">
        <string>Load list</string>
       </property>
@@ -400,17 +551,17 @@
      <widget class="QLabel" name="label_12">
       <property name="geometry">
        <rect>
-        <x>-360</x>
-        <y>-10</y>
-        <width>1551</width>
-        <height>761</height>
+        <x>-340</x>
+        <y>-140</y>
+        <width>1501</width>
+        <height>701</height>
        </rect>
       </property>
       <property name="text">
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>../../Desktop/ciel2.jpg</pixmap>
+       <pixmap>../../Desktop/ciel.jpg</pixmap>
       </property>
      </widget>
      <zorder>label_12</zorder>
@@ -420,7 +571,7 @@
     </widget>
     <widget class="QWidget" name="tab_afficher">
      <attribute name="title">
-      <string>Afficher un vol</string>
+      <string>Afficher les vols</string>
      </attribute>
      <widget class="QTableView" name="tableView">
       <property name="geometry">
@@ -430,6 +581,12 @@
         <width>731</width>
         <height>341</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #dcdcdc;
+color: rgb(0, 0, 0);
+border: 2px solid ;
+border-radius: 10px</string>
       </property>
      </widget>
      <widget class="QLineEdit" name="lineEdit_cherche_numero">
@@ -441,6 +598,12 @@
         <height>30</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #dcdcdc;
+color: rgb(0, 0, 0);
+border: 2px solid ;
+  border-radius: 5px</string>
+      </property>
      </widget>
      <widget class="QLabel" name="label_10">
       <property name="geometry">
@@ -450,6 +613,10 @@
         <width>191</width>
         <height>20</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #dcdcdc;
+font: 9pt &quot;Bernard MT Condensed&quot;;</string>
       </property>
       <property name="text">
        <string>Numero du vol à chercher</string>
@@ -463,6 +630,12 @@
         <width>141</width>
         <height>30</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #dcdcdc;
+color: rgb(0, 0, 0);
+border: 2px solid ;
+  border-radius: 5px</string>
       </property>
       <item>
        <property name="text">
@@ -493,11 +666,27 @@
      <widget class="QPushButton" name="pushButton_PDF">
       <property name="geometry">
        <rect>
-        <x>100</x>
-        <y>430</y>
+        <x>110</x>
+        <y>425</y>
         <width>191</width>
-        <height>30</height>
+        <height>34</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+color: rgb(0, 0, 0);
+background:#dcdcdc;
+border: none;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
+border: 2px solid ;
+border-radius: 8px;
+}
+QPushButton:hover {
+color:#fff;
+	background-color:#535353;
+border: none;
+}</string>
       </property>
       <property name="text">
        <string>Exporter fichier PDF</string>
@@ -506,11 +695,27 @@
      <widget class="QPushButton" name="pushButton_imprimer">
       <property name="geometry">
        <rect>
-        <x>400</x>
-        <y>430</y>
+        <x>410</x>
+        <y>425</y>
         <width>191</width>
-        <height>30</height>
+        <height>34</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+color: rgb(0, 0, 0);
+background:#dcdcdc;
+border: none;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
+border: 2px solid ;
+border-radius: 8px;
+}
+QPushButton:hover {
+color:#fff;
+	background-color:#535353;
+border: none;
+}</string>
       </property>
       <property name="text">
        <string>Imprimer fichier</string>
@@ -519,17 +724,17 @@
      <widget class="QLabel" name="label_13">
       <property name="geometry">
        <rect>
-        <x>-360</x>
-        <y>-300</y>
-        <width>2131</width>
-        <height>1341</height>
+        <x>-340</x>
+        <y>-140</y>
+        <width>1501</width>
+        <height>701</height>
        </rect>
       </property>
       <property name="text">
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>../../Desktop/ciel2.jpg</pixmap>
+       <pixmap>../../Desktop/ciel.jpg</pixmap>
       </property>
      </widget>
      <zorder>label_13</zorder>
@@ -553,6 +758,10 @@
         <height>25</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">color: #dcdcdc;
+font: 9pt &quot;Bernard MT Condensed&quot;;</string>
+      </property>
       <property name="text">
        <string>Numéro du vol à supprimer</string>
       </property>
@@ -565,6 +774,22 @@
         <width>112</width>
         <height>34</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+color: rgb(0, 0, 0);
+background:#dcdcdc;
+border: none;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
+border: 2px solid ;
+border-radius: 8px;
+}
+QPushButton:hover {
+color:#fff;
+	background-color:#535353;
+border: none;
+}</string>
       </property>
       <property name="text">
        <string>Supprimer</string>
@@ -579,6 +804,12 @@
         <height>25</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #dcdcdc;
+color: rgb(0, 0, 0);
+border: 2px solid ;
+  border-radius: 5px</string>
+      </property>
      </widget>
      <widget class="QPushButton" name="pushButton_loadlist_supp">
       <property name="geometry">
@@ -589,6 +820,22 @@
         <height>34</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+color: rgb(0, 0, 0);
+background:#dcdcdc;
+border: none;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
+border: 2px solid ;
+border-radius: 8px;
+}
+QPushButton:hover {
+color:#fff;
+	background-color:#535353;
+border: none;
+}</string>
+      </property>
       <property name="text">
        <string>Load list</string>
       </property>
@@ -596,17 +843,17 @@
      <widget class="QLabel" name="label_14">
       <property name="geometry">
        <rect>
-        <x>-360</x>
-        <y>-10</y>
-        <width>1551</width>
-        <height>761</height>
+        <x>-340</x>
+        <y>-140</y>
+        <width>1501</width>
+        <height>701</height>
        </rect>
       </property>
       <property name="text">
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>../../Desktop/ciel2.jpg</pixmap>
+       <pixmap>../../Desktop/ciel.jpg</pixmap>
       </property>
      </widget>
      <zorder>label_14</zorder>
@@ -627,6 +874,22 @@
         <width>171</width>
         <height>34</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+color: rgb(0, 0, 0);
+background:#dcdcdc;
+border: none;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
+border: 2px solid ;
+border-radius: 8px;
+}
+QPushButton:hover {
+color:#fff;
+	background-color:#535353;
+border: none;
+}</string>
       </property>
       <property name="text">
        <string>Générer un QR code</string>
@@ -654,21 +917,27 @@
         <height>401</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #dcdcdc;
+color: rgb(0, 0, 0);
+border: 2px solid ;
+border-radius: 10px</string>
+      </property>
      </widget>
      <widget class="QLabel" name="label_15">
       <property name="geometry">
        <rect>
-        <x>-360</x>
-        <y>-10</y>
-        <width>1551</width>
-        <height>761</height>
+        <x>-340</x>
+        <y>-140</y>
+        <width>1501</width>
+        <height>701</height>
        </rect>
       </property>
       <property name="text">
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>../../Desktop/ciel2.jpg</pixmap>
+       <pixmap>../../Desktop/ciel.jpg</pixmap>
       </property>
      </widget>
      <zorder>label_15</zorder>
